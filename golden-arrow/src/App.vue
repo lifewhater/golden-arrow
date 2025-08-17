@@ -1,11 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import navBar from './NavBar/navBar.vue';
+  
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <navBar/>
 </template>
 
-<style scoped></style>
+<style>
+
+body {
+  background-color: black;
+  }
+@media (min-width: 600px) {}
+@media (min-width: 1024px) {}
+
+</style>
