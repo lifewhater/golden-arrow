@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import navBar from './Pages/NavBar/navBar.vue';
-import heroPage from './Pages/HeroPage/heroPage.vue';
+import navBar from './components/navBar.vue';
+import heroPage from './components/heroPage.vue';
 import './style.css'
   
 </script>
