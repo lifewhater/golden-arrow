@@ -113,11 +113,6 @@ watch(menuOpen, (open) => {
     margin-left: 5rem;
 }
 
-.menu ::after{
-    content: 'GOLDEN ARROW';
-    font-size: large;
-    
-}
 
 
 </style>
