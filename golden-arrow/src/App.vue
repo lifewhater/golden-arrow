@@ -6,8 +6,11 @@ import './style.css'
 </script>
 
 <template>
-  <navBar/>
+  <nav> <navBar/> </nav>
+ <body>
   <heroPage/>
+ </body>
+  
 </template>
 
 <style>

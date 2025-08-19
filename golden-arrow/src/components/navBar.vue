@@ -28,9 +28,9 @@ function toggleMenu() {
 watch(menuOpen, (open) => {
     if (menu.value) {
         if (open) {
-            gsap.to(menu.value, {x: 0, duration: 1, ease: "power1.out"})
+            gsap.to(menu.value, {x: 0, duration: 0.5, ease: "power1.out"})
         } else {
-            gsap.to(menu.value, {x: '-100%', duration: 1, ease: "power2.in"})
+            gsap.to(menu.value, {x: '-100%', duration: 0.5, ease: "power2.in"})
         }
     }
 })
@@ -89,7 +89,7 @@ watch(menuOpen, (open) => {
   left: 0;
   width: 100vw;
   height: 100vh;
-  color: gold;
+  color: rgb(255, 255, 255);
   list-style: none;
   padding: 8rem 1rem;
   margin: 0;
