@@ -1,1 +1,13 @@
 @import 'tailwindcss';
+
+@layer base {
+    :root{
+        /* colors */
+        --ga-ink: #000000;
+        --ga-ink-weak: #0b0b0b;
+        --ga-gold: #FCA311;
+        --ga-blue: #14213D;
+        --ga-silver: #E5E5E5;
+
+    }
+}

@@ -28,36 +28,36 @@ const cards = [
 <style>
 .gridLayout {
     display: grid;
-    margin: 32px;
-    gap: 40px;
-    margin-top: 600px;
+    margin: 2rem;
+    gap: 2.5rem;
+    margin-top: 37.5rem;
     overflow: hidden;
     grid-template-columns: 1fr;
 }
 .bg-blur {
     height: 100%;
     width: 100%;
-    filter: blur(10px);
+    filter: blur(0.5rem);
     opacity: 0.9;
     pointer-events: none;
     position: absolute;
-    
+    overflow: hidden;
     background-size: cover;
     scale: 175% 95%;
-    background-position: right;
+    transform: translateX(2rem);
 }
 
 .showcase{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
-    max-width: 400px;
+    height: 31.25rem;
+    max-width: 25rem;
     background: rgba(122, 122, 122, 0.726);
-    backdrop-filter: blur(30px);
-    border-radius: 5px;
-    border: 0.8px  white;
+    backdrop-filter: blur(1.875rem);
+    border-radius: 0.3125rem;
     position: relative;
+    overflow: hidden;
 }
 .shirt {
   position: relative;
@@ -66,6 +66,6 @@ const cards = [
   max-width: 75%;
   max-height: 80%;
   object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,.45));
+  filter: drop-shadow(0 1.25rem 2.5rem rgba(0,0,0,.45));
 }
 </style>
