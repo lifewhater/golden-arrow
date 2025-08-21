@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import navBar from './components/navBar.vue';
-import heroPage from './components/heroPage.vue';
+import heroPageCol from './components/heroPage(col).vue';
+import navBarDiff from './components/navBar(diff).vue';
+import heroPageRow from './components/heroPage(row).vue';
 import './style.css'
   
 </script>
 
 <template>
-<navBar/> 
-<heroPage />
- 
+<navBarDiff /> 
+<heroPageRow />
   
 </template>
 

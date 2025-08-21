@@ -9,7 +9,7 @@
         --ga-blue: #14213D;
         --ga-silver: #E5E5E5;
         --ga-frost-bg: rgba(255, 255, 255, 0.10);
-        --ga-frost-border: rgb(255, 255, 255, 0.15);
+        --ga-frost-border: rgba(255, 255, 255, 0.15);
 
         /* text fonts and size */
         --ga-header-fontSize: 4rem;

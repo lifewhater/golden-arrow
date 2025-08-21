@@ -1,3 +1,6 @@
+<!-- LOOK INTO MAKING A CAROUSEL INSTEAD OF SCROLLING DOWN -->
+ 
+
 <template>
     <div class="gridLayout">
         <div v-for="(c, i) in cards" :key="i" class="showcase">
@@ -27,12 +30,17 @@ const cards = [
 
 <style>
 .gridLayout {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex: 1 0 none;
+    justify-content: space-around;
     margin: 2rem;
     gap: 2.5rem;
     margin-top: 37.5rem;
     overflow: hidden;
-    grid-template-columns: 1fr;
+        
+
 }
 .bg-blur {
     height: 100%;
@@ -43,7 +51,7 @@ const cards = [
     position: absolute;
     overflow: hidden;
     background-size: cover;
-    scale: 175% 95%;
+    scale: 175% 105%;
     transform: translateX(2rem);
 }
 
@@ -51,20 +59,21 @@ const cards = [
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 31.25rem;
-    max-width: 25rem;
-    background: rgba(122, 122, 122, 0.726);
+    flex-shrink: 0;
+    height: 30rem;
+    max-width: 100%;
     backdrop-filter: blur(1.875rem);
     border-radius: 0.3125rem;
     position: relative;
     overflow: hidden;
+    border: 0.015rem solid hsl(0 0% 30%);
 }
 .shirt {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: block;
-  max-width: 75%;
-  max-height: 80%;
+  max-width: 90%;
+  max-height: 95%;
   object-fit: contain;
   filter: drop-shadow(0 1.25rem 2.5rem rgba(0,0,0,.45));
 }

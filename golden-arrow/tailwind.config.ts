@@ -1,40 +1,54 @@
-// import './styles/tokens.css'
-import { plugin } from 'postcss'
+// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 export default {
-    content: ['./index.html', './src/styles/tokens.css.{vue,js,ts}'],
-
-    theme: {
-        extend: {
-            // colors
-            colors: { brand: {
-                gold: 'var(--ga-gold)', 
-                ink: 'var(--ga-ink)',
-                inkWeak: 'var(--ga-ink-weak)',
-                blue: 'var(--ga-blue)',
-                silver: 'var(--ga-silver)',
-                frostBG: 'var(--ga-frost-bg)',
-                frostBorder: 'var(--ga-frost-border)',
-            } },
-
-            // fonts and sizes 
-            font: {
-                header: 'var(--ga-header-fontSize)',
-                navBar: 'var(--ga-navbar-fontSize)',
-                label: 'var(--ga-label-fontSize)',
-            },
-
-
-            width: { 
-                card: 'var(--ga-card-w'},
-                borderRadius: { card: 'var(--ga-card-r)'},
-                blur: { glass: 'var(--ga-blur)',
-                gap: 'var(--ga-card-gap)'
-                }
+  content: [
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}',   // ← scan your components/pages
+  ],
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          gold: 'var(--ga-gold)',
+          ink: 'var(--ga-ink)',
+          inkWeak: 'var(--ga-ink-weak)',
+          blue: 'var(--ga-blue)',
+          silver: 'var(--ga-silver)',
+          frostBG: 'var(--ga-frost-bg)',
+          frostBorder: 'var(--ga-frost-border)',
         },
+      },
+
+      /* font sizes (utility: text-font-header, etc.) */
+      fontSize: {
+        'font-header': ['40px', { lineHeight: '1.1', letterSpacing: '0.08em' }],
+        'font-navbar': ['14px', { letterSpacing: '0.12em' }],
+        'font-label':  ['12px', { letterSpacing: '0.08em' }],
+      },
+
+      /* optional: fonts (utility: font-brand) */
+      fontFamily: {
+        brand: ['"mason-sans"', 'sans-serif'],
+      },
+
+      width: {
+        card: 'var(--ga-card-w)',          // w-card
+      },
+      borderRadius: {
+        card: 'var(--ga-card-r)',          // rounded-card
+      },
+      blur: {
+        glass: 'var(--ga-blur)',           // backdrop-blur-glass
+      },
+      spacing: {
+        header: 'var(--ga-header-h)',      // pt-header, mt-header
+        cardGap: 'var(--ga-card-gap)',     // gap-y-cardGap, space-y-cardGap
+      },
+      boxShadow: {
+        card: 'var(--ga-shadow-card)',     // shadow-card
+      },
     },
-
-    plugins: [],
+  },
+  plugins: [],
 } satisfies Config
-
