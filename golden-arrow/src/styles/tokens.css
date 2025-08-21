@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+@layer base {
+    :root{
+        /* colors */
+        --ga-ink: #000000;
+        --ga-ink-weak: #0b0b0b;
+        --ga-gold: #FCA311;
+        --ga-blue: #14213D;
+        --ga-silver: #E5E5E5;
+        --ga-frost-bg: rgba(255, 255, 255, 0.10);
+        --ga-frost-border: rgb(255, 255, 255, 0.15);
+
+        /* text fonts and size */
+        --ga-header-fontSize: 4rem;
+        --ga-navbar-fontSize: 1.5rem;
+        --ga-label-fontSize: 1.17rem;
+        
+
+        /* styling for cards */
+        --ga-card-w: 35rem;
+        --ga-card-r: 1rem;
+        --ga-card-gap: 6rem;
+
+        /* effects */
+        --ga-blur: 12px;
+
+        /* header */
+        --ga-header-h: 5.25rem;
+    }
+}

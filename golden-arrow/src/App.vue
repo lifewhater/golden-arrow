@@ -7,7 +7,6 @@ import './style.css'
 
 <template>
 <navBar/> 
-
 <heroPage />
  
   
