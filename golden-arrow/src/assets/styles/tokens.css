@@ -12,9 +12,12 @@
         --ga-frost-border: rgba(255, 255, 255, 0.15);
 
         /* text fonts and size */
-        --ga-header-fontSize: 4rem;
-        --ga-navbar-fontSize: 1.5rem;
+        --ga-header-fontSize: 5rem;
+        --ga-navbar-fontSize: 1.75rem;
         --ga-label-fontSize: 1.17rem;
+
+        /* margins */
+        --ga-margin: 1rem;
         
 
         /* styling for cards */

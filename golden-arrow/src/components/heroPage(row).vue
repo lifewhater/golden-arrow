@@ -58,9 +58,11 @@ const cards = [
 
 .showcase{
     display: flex;
+    flex: 1 0 auto;
+    /* flex-shrink: 0;
+    flex-grow: 1; */
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     height: 30rem;
     max-width: 100%;
     backdrop-filter: blur(1.875rem);

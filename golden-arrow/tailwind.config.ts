@@ -8,15 +8,22 @@ export default {
   ],
   theme: {
     extend: {
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1536px',
+    },
       colors: {
         brand: {
-          gold: 'var(--ga-gold)',
-          ink: 'var(--ga-ink)',
-          inkWeak: 'var(--ga-ink-weak)',
-          blue: 'var(--ga-blue)',
-          silver: 'var(--ga-silver)',
-          frostBG: 'var(--ga-frost-bg)',
-          frostBorder: 'var(--ga-frost-border)',
+          'gold': 'var(--ga-gold)',
+          'ink': 'var(--ga-ink)',
+          'inkWeak': 'var(--ga-ink-weak)',
+          'blue': 'var(--ga-blue)',
+          'silver': 'var(--ga-silver)',
+          'frostBG': 'var(--ga-frost-bg)',
+          'frostBorder': 'var(--ga-frost-border)',
         },
       },
 
