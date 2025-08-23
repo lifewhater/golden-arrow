@@ -15,9 +15,12 @@
         --ga-header-fontSize: 5rem;
         --ga-navbar-fontSize: 1.75rem;
         --ga-label-fontSize: 1.17rem;
+        --ga-title-fontSize: 4rem;
 
         /* margins */
-        --ga-margin: 1rem;
+        --ga-margin-top: 8rem;
+        --ga-margin-left: 5rem;
+        --ga-margin-leftSm: 1.5rem;
         
 
         /* styling for cards */

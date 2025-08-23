@@ -1,12 +1,10 @@
+// main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import './assets/styles/fonts.css' // Import the fonts CSS file
+import router from './router'
+import './assets/styles/fonts.css'
 import './assets/styles/tokens.css'
 
-
-
-
-
-
-
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')

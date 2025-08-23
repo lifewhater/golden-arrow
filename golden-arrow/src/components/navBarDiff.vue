@@ -6,17 +6,17 @@
             <span></span>
             <span></span>
         </div>
-        <ul class="menu hidden md:flex items-center gap-5 ml-5 lg:gap-15 text-3xl">
-            <li><a href="/" class="cursor-pointer">Home</a></li>
-            <li><a href="/story" class="cursor-pointer">Story</a></li>
-            <li><a href="/collection" class="cursor-pointer">Collection</a></li>
+        <ul class="menu hidden md:flex items-center gap-8  lg:gap-10 text-l ml-(--ga-margin-left)">
+            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><RouterLink to="/story">Story</RouterLink></li>
+            <li><RouterLink to="/collection">Collection</RouterLink></li>
         </ul>
     </nav>
     
 </template>
 
 <script setup lang="ts">
-
+import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
@@ -26,7 +26,7 @@
     position: relative;
     justify-content: space-between;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 5rem;
     
 }
 
@@ -35,7 +35,7 @@
     color: var(--ga-gold);
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -48,7 +48,7 @@
     z-index: 50;
     height: 15px;
     width: 30px;
-    margin-left: var(--ga-margin);
+    margin-left: var(--ga-margin-leftSm);
     
 }
 
@@ -61,7 +61,9 @@
 
 .menu {
     color: var(--ga-silver);
-    font-size: var(--ga-navbar-fontSize);    
+    font-size: var(--ga-navbar-fontSize);
+    position: fixed;
+    
 }
 
 
