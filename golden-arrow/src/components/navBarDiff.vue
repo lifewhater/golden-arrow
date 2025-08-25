@@ -29,11 +29,16 @@ import { RouterLink } from 'vue-router'
 .navbar {
     display: flex; /* Use flexbox for layout */
     width: 100%; /* Full width of the container */
-    position: relative; /* Positioning context for child elements */
+    top: 0;
+    height: 8rem;
+    position: fixed; /* Positioning context for child elements */
     justify-content: space-between; /* Space between items */
     align-items: center; /* Center items vertically */
-    padding-top: 5rem; /* Top padding for spacing */
     z-index: 50; /* Ensure navbar is above other content */
+
+    /* blur effect */
+    background-color: var(--ga-frost-bg);
+    backdrop-filter: blur(30px);
 }
 
 /* Styles for the header/title */

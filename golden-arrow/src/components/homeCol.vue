@@ -2,7 +2,7 @@
  
 
 <template>
-    <div v-for="(c, i) in tshirts" :key="i" class="layout">
+    <div v-for="(c, i) in tshirts" :key="i" >
         <img :src="c.shirt" alt="ERROR"/>
     </div>
 </template>

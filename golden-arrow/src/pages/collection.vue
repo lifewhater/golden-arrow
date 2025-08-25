@@ -46,7 +46,7 @@ const cards = [
     display: grid; /* Use CSS Grid for layout */
     gap: 2.5rem; /* Space between grid items */
     margin: 2rem; /* Outer margin */
-    margin-top: 6rem; /* Additional top margin */
+    /* margin-top: 6rem; Additional top margin */
     height: 30rem; /* Fixed height for the layout */
 }
 
