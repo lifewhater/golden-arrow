@@ -2,14 +2,15 @@
 
     <nav class="navbar">
         <div class="header">GA</div>
-        <div class="hamburger md:hidden flex flex-col justify-between">
+        <div class="hamburger lg:hidden flex flex-col justify-between">
             <span></span>
             <span></span>
         </div>
-        <ul class="menu hidden md:flex items-center gap-8  lg:gap-10 text-l ml-(--ga-margin-left)">
+        <!-- md:flex items-center gap-5 -->
+        <ul class="menu hidden md:ml-1.5 lg:flex items-center gap-10 text-l ml-(--ga-margin-left)">
             <li><RouterLink to="/">Home</RouterLink></li>
-            <li><RouterLink to="/story">Story</RouterLink></li>
             <li><RouterLink to="/collection">Collection</RouterLink></li>
+            <li><RouterLink to="/story">Our Story</RouterLink></li>
         </ul>
     </nav>
     
@@ -19,6 +20,7 @@
 import { RouterLink } from 'vue-router'
 </script>
 
+
 <style scoped>
 .navbar{
     display: flex;
@@ -27,6 +29,7 @@ import { RouterLink } from 'vue-router'
     justify-content: space-between;
     align-items: center;
     padding-top: 5rem;
+    z-index: 50;
     
 }
 

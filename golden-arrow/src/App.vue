@@ -8,6 +8,7 @@ import './style.css'
   
   <navBarDiff />
   <router-view />
+  
 </template>
 
 <style>
