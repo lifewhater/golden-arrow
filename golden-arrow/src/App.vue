@@ -5,10 +5,12 @@ import './style.css'
 </script>
 
 <template>
-  
+  <!-- Imports NavBar -->  
   <navBarDiff />
+
+  <!-- imports all the pages that needs to be routed including home -->
   <router-view />
-  
+
 </template>
 
 <style>

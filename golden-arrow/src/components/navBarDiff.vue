@@ -1,74 +1,75 @@
 <template>
-
+    <!-- Navigation bar container -->
     <nav class="navbar">
+        <!-- Header logo or title -->
         <div class="header">GA</div>
+        
+        <!-- Hamburger menu for mobile view -->
         <div class="hamburger lg:hidden flex flex-col justify-between">
             <span></span>
             <span></span>
         </div>
-        <!-- md:flex items-center gap-5 -->
-        <ul class="menu hidden md:ml-1.5 lg:flex items-center gap-10 text-l ml-(--ga-margin-left)">
+
+        <!-- Navigation menu, hidden on small screens and shown on medium and large screens -->
+        <ul class="menu hidden md:ml-1.5 lg:flex items-center gap-10 text-l lg:ml-(--ga-margin-left)">
             <li><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/collection">Collection</RouterLink></li>
             <li><RouterLink to="/story">Our Story</RouterLink></li>
         </ul>
     </nav>
-    
 </template>
 
 <script setup lang="ts">
+// Import RouterLink from vue-router for navigation links
 import { RouterLink } from 'vue-router'
 </script>
 
-
 <style scoped>
-.navbar{
-    display: flex;
-    width: 100%;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 5rem;
-    z-index: 50;
-    
+/* Styles for the navigation bar */
+.navbar {
+    display: flex; /* Use flexbox for layout */
+    width: 100%; /* Full width of the container */
+    position: relative; /* Positioning context for child elements */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding-top: 5rem; /* Top padding for spacing */
+    z-index: 50; /* Ensure navbar is above other content */
 }
 
+/* Styles for the header/title */
 .header {  
-    font-size: var(--ga-header-fontSize);
-    color: var(--ga-gold);
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
+    font-size: var(--ga-header-fontSize); /* Font size from CSS variable */
+    color: var(--ga-gold); /* Text color from CSS variable */
+    text-align: center; /* Center the text */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family */
+    position: fixed; /* Fixed position for scrolling effect */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
+/* Styles for the hamburger menu (for mobile view) */
 .hamburger {
-    /* display: flex; */
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 50;
-    height: 15px;
-    width: 30px;
-    margin-left: var(--ga-margin-leftSm);
-    
+    flex-direction: column; /* Stack the lines vertically */
+    justify-content: space-between; /* Space between lines */
+    z-index: 50; /* Ensure it is above other content */
+    height: 15px; /* Height of the hamburger menu */
+    width: 30px; /* Width of the hamburger menu */
+    margin-left: var(--ga-margin-leftSm); /* Left margin from CSS variable */
 }
 
-.hamburger span{
-    display: block;
-    background: var(--ga-gold);
-    height: 4px;
-    border-radius: 2px;
+/* Styles for each line in the hamburger menu */
+.hamburger span {
+    display: block; /* Block display for each line */
+    background: var(--ga-gold); /* Background color from CSS variable */
+    height: 4px; /* Height of each line */
+    border-radius: 2px; /* Rounded corners */
 }
 
+/* Styles for the navigation menu */
 .menu {
-    color: var(--ga-silver);
-    font-size: var(--ga-navbar-fontSize);
-    position: fixed;
-    
+    color: var(--ga-silver); /* Text color from CSS variable */
+    font-size: var(--ga-navbar-fontSize); /* Font size from CSS variable */
+    position: fixed; /* Fixed position for scrolling effect */
 }
-
-
-
 </style>
