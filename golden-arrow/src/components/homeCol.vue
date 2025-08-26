@@ -1,18 +1,11 @@
-<!-- LOOK INTO MAKING A CAROUSEL INSTEAD OF SCROLLING DOWN -->
- 
-
 <template>
-    <div v-for="(c, i) in tshirts" :key="i" >
-        <img :src="c.shirt" alt="ERROR"/>
+    <div class="parent grid-cols-1 md:grid-cols-2">
+        <div v-for="(c, i) in tshirts" :key="i" class="scrollBehavior">
+        <img :src="c.shirt" alt="ERROR" class="h-full w-full object-cover "/>
     </div>
-</template>
+    </div>
 
-<!-- MAKE IT LOOK LIKE OFLYN WEBSITE COLLECTION PAGE.
--HAVE A FLEX BOX, SHOW PRODUCT WITH MODEL. PRICE AT THE BOTTOM WITH NAME
-    WITH PRICE BELOW IT, A LITTLE GRAYED OUT WITH SOME LINE SPACING. 
-    SHOW THE PRODUCT WITH DIFFERENT VIEWS.
-- ADD HOVER ELEMENT TO ADD TO CART AND MAKE THE CARD ITSELF CLICKABLE
-- THE CARD EXPANDS INTO GALLERY VIEW TO SHOW THE PRODUCT IN DETAIL. -->
+</template>
 
 <script setup lang="ts">
 import model1 from '@/assets/tshirts/model1-1.jpg'
@@ -30,14 +23,26 @@ const tshirts =[
 </script>
 
 <style scoped>
-.product{
-    color: var(--ga-silver);
-    font-size: var(--ga-title-fontSize);
-    margin-top: var(--ga-margin-top);
-    /* margin-left: var(--ga-margin-leftSm); */
 
+.parent{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, 1fr); */
+    height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-type: y var(--tw-scroll-snap-strictness);
+    --tw-scroll-snap-strictness: mandatory;
+    overflow-x: auto;
 }
 
+.scrollBehavior {
+    /* min-h-screen flex items-center justify-center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+    min-height: 100vh;
+    
+}
 
 
 </style>

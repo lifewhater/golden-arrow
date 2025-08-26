@@ -37,8 +37,8 @@ import { RouterLink } from 'vue-router'
     z-index: 50; /* Ensure navbar is above other content */
 
     /* blur effect */
-    background-color: var(--ga-frost-bg);
-    backdrop-filter: blur(30px);
+    /* background-color: var(--ga-frost-bg);
+    backdrop-filter: blur(30px); */
 }
 
 /* Styles for the header/title */
