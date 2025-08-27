@@ -1,37 +1,51 @@
 <template>
-    <button class="hamburger cursor-pointer
-                "
-                @click="isOpen = true">
+    <button ref="logo" class="hamburger cursor-pointer z-50"
+                @click="openMenu">
         <span></span>
         <span></span>
     </button>
 
-    <div ref="sideMenu" class="fixed
+    <div ref="drawer" class="fixed
                 top-0 left-0 
                 bg-[var(--ga-frost-bg)]
                 backdrop-blur-[var(--ga-blur)]
-                h-screen w-0
-                overflow-x-hidden">
+                h-screen w-screen
+                overflow-x-hidden"
+                @click.self="closeMenu"
+                tabindex="-1">
 
-        <ul id="sideMenu" class="menu
+            <ul class="menu
                 pl-[var(--ga-margin-leftSm)]
                 mt-40
                 gap-6
                 text-left">
-            <li><RouterLink to="/">Home</RouterLink></li>
-            <li><RouterLink to="/collection">Collection</RouterLink></li>
-            <li><RouterLink to="/story">Our Story</RouterLink></li>
-        </ul>
+                <li><RouterLink to="/">Home</RouterLink></li>
+                <li><RouterLink to="/collection">Collection</RouterLink></li>
+                <li><RouterLink to="/story">Our Story</RouterLink></li>
+            </ul>
     </div>
 
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue';
+<script setup>
+import { ref, onMounted } from 'vue';
+import gsap from 'gsap';
 
-const isOpen = ref(false)
-const sideMenu = ref(null)
+const drawer = ref(null)
+const logo = ref(null)
 
+function openMenu(){
+    gsap.to(drawer.value , {xPercent:0, duration:0.3, ease: 'power2.out'})
+}
+
+function closeMenu(){
+    gsap.to(drawer.value, {xPercent:-100, duration:0.3, ease:'power2.in'})
+}
+
+
+onMounted(() => {
+    gsap.set(drawer.value, {xPercent:-100})
+})
 
 </script>
 
