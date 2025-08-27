@@ -30,7 +30,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import gsap from 'gsap';
-
 const drawer = ref(null)
 const logo = ref(null)
 

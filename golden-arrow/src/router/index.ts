@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Collection from '@/pages/collection.vue';
 import Story from '@/pages/story.vue';
-import HomeRow from '@/components/homeRow.vue';
 import HomeCol from '@/components/homeCol.vue';
 
 

@@ -3,7 +3,7 @@
         <div v-for="(c, i) in tshirts" :key="i"
          class="scrollBehavior
          hover:scale-110
-         ">
+         duration-150">
         <img :src="c.shirt" alt="ERROR" class="h-full w-full object-cover "/>
     </div>
     </div>
