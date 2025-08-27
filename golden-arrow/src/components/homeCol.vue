@@ -1,6 +1,9 @@
 <template>
     <div class="parent grid-cols-1 md:grid-cols-2">
-        <div v-for="(c, i) in tshirts" :key="i" class="scrollBehavior">
+        <div v-for="(c, i) in tshirts" :key="i"
+         class="scrollBehavior
+         hover:scale-110
+         ">
         <img :src="c.shirt" alt="ERROR" class="h-full w-full object-cover "/>
     </div>
     </div>
@@ -31,7 +34,7 @@ const tshirts =[
     scroll-behavior: smooth;
     scroll-snap-type: y var(--tw-scroll-snap-strictness);
     --tw-scroll-snap-strictness: mandatory;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .scrollBehavior {
@@ -40,8 +43,7 @@ const tshirts =[
     align-items: center;
     justify-content: center;
     scroll-snap-align: center;
-    min-height: 100vh;
-    
+    min-height: 100vh;    
 }
 
 

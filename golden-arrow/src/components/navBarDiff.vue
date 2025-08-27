@@ -4,14 +4,20 @@
         <!-- Header logo or title -->
         <div class="header">GA</div>
         
-        <!-- Hamburger menu for mobile view -->
-        <div class="hamburger lg:hidden flex flex-col justify-between">
-            <span></span>
-            <span></span>
-        </div>
+        <!-- Hamburger menu for mobile view and button -->
+        <div class="lg:hidden 
+                flex flex-col
+                justify-between">
+            <drawer />
+    </div>
 
         <!-- Navigation menu, hidden on small screens and shown on medium and large screens -->
-        <ul class="menu hidden md:ml-1.5 lg:flex items-center gap-10 text-l lg:ml-(--ga-margin-left)">
+        <ul class="menu hidden
+                        md:ml-1.5                        
+                        lg:flex 
+                        items-center 
+                        gap-10 text-l 
+                        lg:ml-(--ga-margin-left)">
             <li><RouterLink to="/">Home</RouterLink></li>
             <li><RouterLink to="/collection">Collection</RouterLink></li>
             <li><RouterLink to="/story">Our Story</RouterLink></li>
@@ -22,6 +28,7 @@
 <script setup lang="ts">
 // Import RouterLink from vue-router for navigation links
 import { RouterLink } from 'vue-router'
+import drawer from './drawer.vue';
 </script>
 
 <style scoped>
@@ -51,24 +58,6 @@ import { RouterLink } from 'vue-router'
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
     cursor: pointer; /* Pointer cursor on hover */
-}
-
-/* Styles for the hamburger menu (for mobile view) */
-.hamburger {
-    flex-direction: column; /* Stack the lines vertically */
-    justify-content: space-between; /* Space between lines */
-    z-index: 50; /* Ensure it is above other content */
-    height: 15px; /* Height of the hamburger menu */
-    width: 30px; /* Width of the hamburger menu */
-    margin-left: var(--ga-margin-leftSm); /* Left margin from CSS variable */
-}
-
-/* Styles for each line in the hamburger menu */
-.hamburger span {
-    display: block; /* Block display for each line */
-    background: var(--ga-gold); /* Background color from CSS variable */
-    height: 4px; /* Height of each line */
-    border-radius: 2px; /* Rounded corners */
 }
 
 /* Styles for the navigation menu */
