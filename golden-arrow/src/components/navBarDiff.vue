@@ -9,6 +9,7 @@
                 flex flex-col
                 justify-between">
             <drawer />
+
     </div>
 
         <!-- Navigation menu, hidden on small screens and shown on medium and large screens -->
@@ -29,6 +30,7 @@
 // Import RouterLink from vue-router for navigation links
 import { RouterLink } from 'vue-router'
 import drawer from './drawer.vue';
+import drawer2 from './drawer2.vue';
 </script>
 
 <style scoped>

@@ -5,12 +5,14 @@
         <span></span>
         <span></span>
     </button>
+
     <div ref="sideMenu" class="fixed
                 top-0 left-0 
                 bg-[var(--ga-frost-bg)]
                 backdrop-blur-[var(--ga-blur)]
-                h-screen w-screen
+                h-screen w-0
                 overflow-x-hidden">
+
         <ul id="sideMenu" class="menu
                 pl-[var(--ga-margin-leftSm)]
                 mt-40
@@ -25,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
 const isOpen = ref(false)
 const sideMenu = ref(null)
