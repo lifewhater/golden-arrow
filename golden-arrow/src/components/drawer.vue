@@ -1,6 +1,7 @@
 <template>
     <button ref="logo" class="hamburger cursor-pointer z-50"
-                @click="openMenu">
+                @click="openMenu"
+                @click.self="closeMenu">
         <span></span>
         <span></span>
     </button>
@@ -34,11 +35,11 @@ const drawer = ref(null)
 const logo = ref(null)
 
 function openMenu(){
-    gsap.to(drawer.value , {xPercent:0, duration:0.3, ease: 'power2.out'})
+    gsap.to(drawer.value , {xPercent:0, duration:0.05, ease: 'power2.out'})
 }
 
 function closeMenu(){
-    gsap.to(drawer.value, {xPercent:-100, duration:0.3, ease:'power2.in'})
+    gsap.to(drawer.value, {xPercent:-100, duration:0.05, ease:'power2.in'})
 }
 
 
@@ -53,26 +54,26 @@ onMounted(() => {
 /* Styles for the hamburger menu (for mobile view) */
 .hamburger {
     display: flex;
-    flex-direction: column; /* Stack the lines vertically */
-    justify-content: space-between; /* Space between lines */
-    z-index: 50; /* Ensure it is above other content */
-    height: 15px; /* Height of the hamburger menu */
-    width: 30px; /* Width of the hamburger menu */
-    margin-left: var(--ga-margin-leftSm); /* Left margin from CSS variable */
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 50;
+    height: 15px;
+    width: 30px;
+    margin-left: var(--ga-margin-leftSm);
 }
 
 /* Styles for each line in the hamburger menu */
 .hamburger span {
-    display: block; /* Block display for each line */
-    background: var(--ga-gold); /* Background color from CSS variable */
-    height: 4px; /* Height of each line */
-    border-radius: 2px; /* Rounded corners */
+    display: block;
+    background: var(--ga-gold);
+    height: 4px;
+    border-radius: 2px;
 }
 /* Styles for the navigation menu */
 .menu {
     display: flex;
     flex-direction: column;
-    color: var(--ga-silver); /* Text color from CSS variable */
-    font-size: var(--ga-navbar-fontSize); /* Font size from CSS variable */
+    color: var(--ga-silver);
+    font-size: var(--ga-navbar-fontSize);
 }
 </style>

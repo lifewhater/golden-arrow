@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import navBarDiff from './components/navBarDiff.vue';
+import navBar from './components/navBar.vue';
 import './style.css'
   
 </script>
 
 <template>
   <!-- Imports NavBar -->  
-  <navBarDiff />
+  <navBar />
 
   <!-- imports all the pages that needs to be routed including home -->
   <router-view />

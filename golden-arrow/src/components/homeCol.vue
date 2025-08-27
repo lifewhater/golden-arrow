@@ -11,10 +11,10 @@
 </template>
 
 <script setup lang="ts">
-import model1 from '@/assets/tshirts/model1-1.jpg'
-import model2 from '@/assets/tshirts/model1-2.jpg'
-import model3 from '@/assets/tshirts/model2-1.jpg'
-import model4 from '@/assets/tshirts/model2-2.jpg'
+import model1 from '@/assets/images/model1-1.avif'
+import model2 from '@/assets/images/model1-2.avif'
+import model3 from '@/assets/images/model2-1.avif'
+import model4 from '@/assets/images/model2-2.avif'
 
 const tshirts =[
     {shirt: model1},

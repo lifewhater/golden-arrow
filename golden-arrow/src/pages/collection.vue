@@ -18,11 +18,11 @@
 
 <script setup lang="ts">
 // Import images for the product cards
-import exampleShirt from '@/assets/tshirts/example.png'
-import atlas from '@/assets/tshirts/atlas.jpeg'
-import hermes from '@/assets/tshirts/hermes.jpeg'
-import poseidon from '@/assets/tshirts/poseidon.jpeg'
-import hercules from '@/assets/tshirts/hercules.jpeg'
+import exampleShirt from '@/assets/images/tshirt.png'
+import atlas from '@/assets/images/atlas.avif'
+import hermes from '@/assets/images/hermes.avif'
+import poseidon from '@/assets/images/poseidon.avif'
+import hercules from '@/assets/images/hercules.avif'
 
 // Define an array of card objects containing background and shirt images
 const cards = [
