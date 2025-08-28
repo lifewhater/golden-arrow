@@ -2,8 +2,8 @@
     <div class="parent grid-cols-1 md:grid-cols-2">
         <div v-for="(c, i) in tshirts" :key="i"
          class="scrollBehavior
-         hover:scale-110
-         duration-150">
+         md:hover:scale-110
+         md:duration-150">
         <img :src="c.shirt" alt="ERROR" class="h-full w-full object-cover "/>
     </div>
     </div>

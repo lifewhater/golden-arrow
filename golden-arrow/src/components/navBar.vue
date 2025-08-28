@@ -18,9 +18,9 @@
                         lg:flex 
                         lg:gap-10
                         lg:ml-(--ga-margin-left)">
-            <li><RouterLink to="/">Home</RouterLink></li>
-            <li><RouterLink to="/collection">Collection</RouterLink></li>
-            <li><RouterLink to="/story">Our Story</RouterLink></li>
+            <li class=""><RouterLink to="/">Home</RouterLink></li>
+            <li class=""><RouterLink to="/collectionNEW">Collection</RouterLink></li>
+            <li class=""><RouterLink to="/story">Our Story</RouterLink></li>
         </ul>
     </nav>
 </template>
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 // Import RouterLink from vue-router for navigation links
 import { RouterLink } from 'vue-router'
-import drawer from './drawer.vue';
+import drawer from '../pages/drawer.vue';
 
 </script>
 

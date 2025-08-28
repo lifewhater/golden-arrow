@@ -1,7 +1,6 @@
 <template>
     <button ref="logo" class="hamburger cursor-pointer z-50"
-                @click="openMenu"
-                @click.self="closeMenu">
+                @click="openMenu">
         <span></span>
         <span></span>
     </button>
@@ -20,9 +19,9 @@
                 mt-40
                 gap-6
                 text-left">
-                <li><RouterLink to="/">Home</RouterLink></li>
-                <li><RouterLink to="/collection">Collection</RouterLink></li>
-                <li><RouterLink to="/story">Our Story</RouterLink></li>
+                <li><RouterLink to="/" @click="closeMenu">Home</RouterLink></li>
+                <li><RouterLink to="/collectionNEW" @click="closeMenu">Collection</RouterLink></li>
+                <li><RouterLink to="/story" @click="closeMenu">Our Story</RouterLink></li>
             </ul>
     </div>
 
