@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <!-- Header logo or title -->
-        <div class="header">GA</div>
+        <RouterLink class="header" to="/">GA</RouterLink>
         
         <!-- Hamburger menu for mobile view and button -->
         <div class="lg:hidden 
@@ -48,9 +48,10 @@ import drawer from '../pages/drawer.vue';
     font-size: var(--ga-header-fontSize);
     color: var(--ga-gold);
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Golden Arrow';
     position: fixed;
     left: 50%;
+    margin-top: 1.5rem;
     transform: translateX(-50%);
     cursor: pointer;
 }

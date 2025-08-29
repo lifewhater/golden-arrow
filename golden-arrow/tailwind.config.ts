@@ -8,6 +8,7 @@ export default {
   ],
   theme: {
     extend: {
+      
         screens: {
           sm: '640px',
           md: '768px',
@@ -35,8 +36,8 @@ export default {
       },
 
       /* optional: fonts (utility: font-brand) */
-      fontFamily: {
-        brand: ['"mason-sans"', 'sans-serif'],
+        fontFamily: {
+        golden: ['"Golden Arrow"', 'serif'],
       },
 
       width: {

@@ -14,7 +14,7 @@
                 @click.self="closeMenu"
                 tabindex="-1">
 
-            <ul class="menu
+            <ul ref="text" class="menu
                 pl-[var(--ga-margin-leftSm)]
                 mt-40
                 gap-6
@@ -29,21 +29,42 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import SplitText from 'gsap/SplitText';
 import gsap from 'gsap';
+
+gsap.registerPlugin(SplitText)
 const drawer = ref(null)
 const logo = ref(null)
+const text = ref(null)
+
 
 function openMenu(){
-    gsap.to(drawer.value , {xPercent:0, duration:0.05, ease: 'power2.out'})
+    gsap.to(drawer.value , {xPercent:0, duration:0.2, ease: 'power2.out', onComplete:textAnimation})
+    
 }
 
 function closeMenu(){
-    gsap.to(drawer.value, {xPercent:-100, duration:0.05, ease:'power2.in'})
+    gsap.to(drawer.value, {xPercent:-100, duration:0.2, ease:'power2.in'})
+}
+
+function textAnimation(){
+    const split = new SplitText(text.value, {type: "words, chars, lines"});
+    gsap.set(text.value, { visibility: 'visible' })
+    gsap.from(split.lines, {
+        y:25,
+        duration:0.6,
+        opacity:0,
+        stagger:0.4,
+        ease: 'circ.out',
+        onComplete: () => split.revert()
+    })
 }
 
 
 onMounted(() => {
-    gsap.set(drawer.value, {xPercent:-100})
+    gsap.set(drawer.value, {xPercent:-100});
+    // gsap.set(text.value, { autoAlpha: 0 })
+
 })
 
 </script>
@@ -74,5 +95,6 @@ onMounted(() => {
     flex-direction: column;
     color: var(--ga-silver);
     font-size: var(--ga-navbar-fontSize);
+    visibility: hidden;
 }
 </style>
