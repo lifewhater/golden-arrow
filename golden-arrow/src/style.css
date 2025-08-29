@@ -1,2 +1,11 @@
-@import 'tailwindcss';
-@import './assets/styles/tokens.css'
+/* Tailwind v4 style */
+@import "tailwindcss";
+@import "./assets/styles/tokens.css";
+
+@font-face {
+  font-family: "Golden Arrow";
+  src: url("./assets/fonts/GoldenArrow.ttf") format("truetype"); /* note: fonts (not font), and a space before format() */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

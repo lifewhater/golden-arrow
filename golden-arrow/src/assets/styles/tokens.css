@@ -4,31 +4,34 @@
     :root{
         /* colors */
         --ga-ink: #000000;
-        --ga-ink-weak: #0b0b0b;
+        --ga-ink-weak: #959393;
         --ga-gold: #FCA311;
         --ga-blue: #14213D;
         --ga-silver: #E5E5E5;
         --ga-frost-bg: rgba(0 0 0 / 0.39);
         --ga-frost-border: rgba(255, 255, 255, 0.15);
 
-        /* text fonts and size */
+        /* text fonts and sizes */
         --ga-header-fontSize: 5rem;
-        --ga-navbar-fontSize: 1.75rem;
-        --ga-label-fontSize: 1.17rem;
+        --ga-navbar-fontSize: 1.5rem;
+        --ga-label-fontSize: 1.5rem;
         --ga-title-fontSize: 4rem;
+        --ga-title-fontSm: 3rem;
+        --ga-price-size: 1rem;
 
         /* margins */
-        --ga-margin-top: 12rem;
-        --ga-margin-left: 5rem;
+        --ga-margin-top: 11rem;
+        --ga-margin-left: 3.5rem;
         --ga-margin-leftSm: 1.5rem;
+        --ga-margin-textCard: 3rem;
         
 
         /* styling for cards */
         --ga-card-w: 35rem;
-        --ga-card-r: 00.3125rem;
-        --ga-card-gap: 2rem;
-        --ga-card-height: 30rem;
-        --ga-card-width: 20rem;
+        --ga-card-r: 00.5rem;
+        --ga-card-gap: 1rem;
+        --ga-card-height: 40rem;
+        --ga-card-width: 26.6rem;
         
 
         /* effects */

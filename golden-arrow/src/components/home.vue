@@ -1,11 +1,12 @@
 <template>
     <div class="parent grid-cols-1 md:grid-cols-2">
         <div v-for="(c, i) in tshirts" :key="i"
-         class="scrollBehavior
-         md:hover:scale-110
-         md:duration-150">
-        <img :src="c.shirt" alt="ERROR" class="h-full w-full object-cover "/>
-    </div>
+            class="group scrollBehavior">
+             <div class="relative w-full h-full overflow-hidden">
+                <img :src="c.shirt" alt="ERROR" class="h-full w-full object-cover md:hover:scale-110
+            md:duration-150"/>
+             </div>
+        </div>
     </div>
 
 </template>
@@ -31,10 +32,12 @@ const tshirts =[
     display: grid;
     /* grid-template-columns: repeat(auto-fit, 1fr); */
     height: 100vh;
+    overflow-y: auto;        /* ✅ make it scrollable */
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch; 
     scroll-behavior: smooth;
     scroll-snap-type: y var(--tw-scroll-snap-strictness);
     --tw-scroll-snap-strictness: mandatory;
-    overflow-x: hidden;
 }
 
 .scrollBehavior {

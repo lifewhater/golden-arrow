@@ -7,8 +7,8 @@
 
     <div ref="drawer" class="fixed
                 top-0 left-0 
-                bg-[var(--ga-frost-bg)]
-                backdrop-blur-[var(--ga-blur)]
+                bg-[var(--ga-ink)]
+ 
                 h-screen w-screen
                 overflow-x-hidden"
                 @click.self="closeMenu"
