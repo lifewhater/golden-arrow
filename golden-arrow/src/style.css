@@ -7,7 +7,6 @@
   src: url("./assets/fonts/GoldenArrow.ttf") format("truetype"); /* note: fonts (not font), and a space before format() */
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 ::-webkit-scrollbar{
