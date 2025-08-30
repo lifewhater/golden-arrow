@@ -1,5 +1,6 @@
 <template>
     <!-- Layout of the entire collection page -->
+
     <div class="flex flex-col mt-[var(--ga-margin-top)] scroll-smooth">
 
         <!-- Main label -->

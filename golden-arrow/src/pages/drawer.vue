@@ -8,7 +8,6 @@
     <div ref="drawer" class="fixed
                 top-0 left-0 
                 bg-[var(--ga-ink)]
- 
                 h-screen w-screen
                 overflow-x-hidden"
                 @click.self="closeMenu"
@@ -28,43 +27,52 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import SplitText from 'gsap/SplitText';
 import gsap from 'gsap';
-
 gsap.registerPlugin(SplitText)
+
 const drawer = ref(null)
 const logo = ref(null)
 const text = ref(null)
-
+let tl: gsap.core.Timeline;
+let split: SplitText;
 
 function openMenu(){
-    gsap.to(drawer.value , {xPercent:0, duration:0.2, ease: 'power2.out', onComplete:textAnimation})
-    
-}
-
-function closeMenu(){
-    gsap.to(drawer.value, {xPercent:-100, duration:0.2, ease:'power2.in'})
-}
-
-function textAnimation(){
-    const split = new SplitText(text.value, {type: "words, chars, lines"});
-    gsap.set(text.value, { visibility: 'visible' })
-    gsap.from(split.lines, {
-        y:25,
-        duration:0.6,
-        opacity:0,
-        stagger:0.4,
-        ease: 'circ.out',
-        onComplete: () => split.revert()
+    gsap.to(drawer.value , {
+        xPercent:0, 
+        duration:0.8, 
+        ease: 'power3.out', 
+        onStart: () => { tl.restart(true).delay(0.5); }
     })
 }
 
+function closeMenu(){
+    tl?.timeScale(2).reverse().eventCallback('onReverseComplete', 
+    () => {gsap.to(drawer.value, 
+        {xPercent: -100, duration:0.3, ease:'circ.out'})})
+}
 
 onMounted(() => {
     gsap.set(drawer.value, {xPercent:-100});
-    // gsap.set(text.value, { autoAlpha: 0 })
+    split = new SplitText(text.value, {type: 'lines', linesClass:'split-line'})
 
+    gsap.set(text.value, {autoAlpha:0})
+    gsap.set(split.lines, {yPercent:100, duration: 0.3, opacity:0,})
+
+    tl = gsap.timeline({paused: true, defaults:{ease: 'circ.out'}})
+    .set(text.value, {autoAlpha: 1} ,0)
+    .to(split.lines, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.1,
+      clearProps: 'transform,opacity'}, 0)    
+})
+
+onBeforeUnmount(() => {
+    tl?.kill()
+    split?.revert()
 })
 
 </script>
@@ -95,6 +103,5 @@ onMounted(() => {
     flex-direction: column;
     color: var(--ga-silver);
     font-size: var(--ga-navbar-fontSize);
-    visibility: hidden;
 }
 </style>
