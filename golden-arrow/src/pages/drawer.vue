@@ -19,7 +19,7 @@
                 gap-6
                 text-left">
                 <li><RouterLink to="/" @click="closeMenu">Home</RouterLink></li>
-                <li><RouterLink to="/collectionNEW" @click="closeMenu">Collection</RouterLink></li>
+                <li><RouterLink to="/collection" @click="closeMenu">Collection</RouterLink></li>
                 <li><RouterLink to="/story" @click="closeMenu">Our Story</RouterLink></li>
             </ul>
     </div>
@@ -41,16 +41,16 @@ let split: SplitText;
 function openMenu(){
     gsap.to(drawer.value , {
         xPercent:0, 
-        duration:0.8, 
+        duration:0.5, 
         ease: 'power3.out', 
-        onStart: () => { tl.restart(true).delay(0.5); }
+        onStart: () => { tl.restart(true).delay(); }
     })
 }
 
 function closeMenu(){
     tl?.timeScale(2).reverse().eventCallback('onReverseComplete', 
     () => {gsap.to(drawer.value, 
-        {xPercent: -100, duration:0.3, ease:'circ.out'})})
+        {xPercent: -100, duration:0.3, ease:'power3.out'})})
 }
 
 onMounted(() => {
@@ -58,7 +58,7 @@ onMounted(() => {
     split = new SplitText(text.value, {type: 'lines', linesClass:'split-line'})
 
     gsap.set(text.value, {autoAlpha:0})
-    gsap.set(split.lines, {yPercent:100, duration: 0.3, opacity:0,})
+    gsap.set(split.lines, {yPercent:100, duration: 1, opacity:0,})
 
     tl = gsap.timeline({paused: true, defaults:{ease: 'circ.out'}})
     .set(text.value, {autoAlpha: 1} ,0)
@@ -66,7 +66,7 @@ onMounted(() => {
       yPercent: 0,
       opacity: 1,
       duration: 1,
-      stagger: 0.1,
+      stagger: 0.3,
       clearProps: 'transform,opacity'}, 0)    
 })
 

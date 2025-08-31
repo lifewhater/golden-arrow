@@ -1,0 +1,37 @@
+[
+    {
+        "slug": "apollo",
+        "name": "Apollo",
+        "price": 35,
+        "category": "t-shirt",
+        "images": ["/img/model1-1.avif"]
+    },
+    {
+        "slug": "hermes",
+        "name": "Hermes",
+        "price": 35,
+        "category": "t-shirt",
+        "images": ["/img/model1-2.avif"]
+    },
+    {
+        "slug": "artemis",
+        "name": "Artemis",
+        "price": 35,
+        "category": "t-shirt",
+        "images": ["/img/model1-3.avif"]
+    },
+    {
+        "slug": "poseidon",
+        "name": "Poseidon",
+        "price": 35,
+        "category": "t-shirt",
+        "images": ["/img/model2-1.avif"]
+    },
+    {
+        "slug": "atlas",
+        "name": "Atlas",
+        "price": 35,
+        "category": "t-shirt",
+        "images": ["/img/model2-2.avif"]
+    }
+]
