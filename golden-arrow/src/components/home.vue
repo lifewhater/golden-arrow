@@ -16,6 +16,8 @@ import model1 from '@/assets/images/model1-1.avif'
 import model2 from '@/assets/images/model1-2.avif'
 import model3 from '@/assets/images/model2-1.avif'
 import model4 from '@/assets/images/model2-2.avif'
+import gsap from 'gsap'
+import { onMounted } from 'vue'
 
 const tshirts =[
     {shirt: model1},
@@ -24,15 +26,19 @@ const tshirts =[
     {shirt: model4},
 ]
 
+onMounted(() => {
+    gsap.from('.parent', {y:30, duration:0.5, opacity:0, ease:'power3.out'})
+
+})
+
 </script>
 
 <style scoped>
 
 .parent{
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, 1fr); */
     height: 100vh;
-    overflow-y: auto;        /* ✅ make it scrollable */
+    overflow-y: auto;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch; 
     scroll-behavior: smooth;

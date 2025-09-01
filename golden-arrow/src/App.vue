@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted } from 'vue';
+
 import navBar from './components/navBar.vue';
 import './style.css'
 
