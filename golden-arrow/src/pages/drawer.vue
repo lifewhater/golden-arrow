@@ -1,9 +1,11 @@
 <template>
-    <button ref="logo" class="hamburger fixed cursor-pointer z-50"
-                @click="toggleMenu">
-        <span ref="top"></span>
-        <span ref="bottom"></span>
-    </button>
+    <header class="isolate">
+        <button ref="logo" class="hamburger fixed top-4 left-4 cursor-pointer z-50"
+                    @click="toggleMenu">
+            <span ref="top"></span>
+            <span ref="bottom"></span>
+        </button>
+    </header>
 
     <div ref="drawer" class="fixed
                 top-0 left-0 
@@ -51,7 +53,7 @@ function openMenu(){
         xPercent:0, 
         duration:0.5, 
         ease: 'power3.out', 
-        onStart: () => { tl.restart(true).delay(); }
+        onStart: () => { tl.restart(true); }
     })
     gsap.to(top.value, {y:5, rotate:45, duration: 0.3, ease:'power3.in'})
     gsap.to(bottom.value, {y:-5, rotate:-45, duration: 0.3, ease:'power3.in'})
@@ -109,6 +111,8 @@ onBeforeUnmount(() => {
     background: var(--ga-gold);
     height: 4px;
     border-radius: 2px;
+    width: 100%;  
+    --webkit-transform: translateZ(0);
 }
 /* Styles for the navigation menu */
 .menu {
