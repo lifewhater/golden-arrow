@@ -1,5 +1,7 @@
 <template>
+
     <nav class="navbar">
+ 
         <!-- Header logo or title -->
         <RouterLink class="header" to="/">GA</RouterLink>
         
@@ -8,7 +10,7 @@
                 flex flex-col
                 justify-between">
             <drawer />
-    </div>
+        </div>
 
         <!-- Navigation menu, hidden on small screens and shown on medium and large screens -->
         <ul class="menu hidden

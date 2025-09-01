@@ -1,4 +1,5 @@
 <template>
+    
     <div class="parent grid-cols-1 md:grid-cols-2">
         <div v-for="(c, i) in tshirts" :key="i"
             class="group scrollBehavior">

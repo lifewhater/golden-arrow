@@ -1,6 +1,19 @@
 <template>
     <!-- Layout of the entire collection page -->
     <section class="flex flex-col scroll-smooth" >
+    <div class="w-full h-[600px] fixed bg-transparent">
+    <LightRays
+      rays-origin="top-center"
+      rays-color="#FFB700"
+      :rays-speed="1.5"
+      :light-spread="0.8"
+      :ray-length="3"
+      :follow-mouse="true"
+      :mouse-influence="0.1"
+      :noise-amount="0.1"
+      :distortion="0.05"
+      class-name="custom-rays" />
+  </div>
         <!-- Main label -->
             <h1 class="text-[var(--ga-silver)]
             mt-[var(--ga-margin-title)]
@@ -60,6 +73,7 @@ import { onMounted } from 'vue';
 import { RouterLink } from 'vue-router';
 import gsap from 'gsap';
 import { useProductStore } from '@/stores/products';
+import LightRays from '@/assets/styles/LightRays.vue';
 
 const store = useProductStore()
 
