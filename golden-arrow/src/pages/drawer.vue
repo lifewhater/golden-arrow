@@ -66,7 +66,7 @@ onMounted(() => {
       yPercent: 0,
       opacity: 1,
       duration: 1,
-      stagger: 0.3,
+      stagger: 0.5,
       clearProps: 'transform,opacity'}, 0)    
 })
 

@@ -19,7 +19,7 @@
                         lg:gap-10
                         lg:ml-(--ga-margin-left)">
             <li class=""><RouterLink to="/">Home</RouterLink></li>
-            <li class=""><RouterLink to="/collectionNEW">Collection</RouterLink></li>
+            <li class=""><RouterLink to="/collection">Collection</RouterLink></li>
             <li class=""><RouterLink to="/story">Our Story</RouterLink></li>
         </ul>
             <RouterLink to="/cart" class="ml-auto mr-[var(--ga-margin-leftSm)]

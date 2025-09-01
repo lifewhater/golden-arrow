@@ -1,4 +1,4 @@
-import { createPinia, defineStore } from "pinia";
+import { defineStore } from "pinia";
 
 interface Product {
     slug: string

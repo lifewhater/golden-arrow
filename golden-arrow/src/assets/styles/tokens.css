@@ -14,16 +14,17 @@
         /* text fonts and sizes */
         --ga-header-fontSize: 6rem;
         --ga-navbar-fontSize: 1.5rem;
-        --ga-label-fontSize: 1.5rem;
+        --ga-label-fontSize: 2rem;
         --ga-title-fontSize: 4rem;
         --ga-title-fontSm: 3rem;
-        --ga-price-size: 1rem;
+        --ga-price-size: 1.5rem;
 
         /* margins */
-        --ga-margin-top: 11rem;
+        --ga-margin-top: 12rem;
         --ga-margin-left: 3.5rem;
         --ga-margin-leftSm: 1.5rem;
-        --ga-margin-textCard: 3rem;
+        --ga-margin-Card: 3rem;
+        --ga-margin-title: 20rem;
         
 
         /* styling for cards */
