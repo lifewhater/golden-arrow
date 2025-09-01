@@ -1,11 +1,10 @@
 <template>
-    <header class="isolate">
-        <button ref="logo" class="hamburger fixed top-4 left-4 cursor-pointer z-50"
+        <button ref="logo" class="hamburger fixed top-4 left-4 cursor-pointer"
                     @click="toggleMenu">
             <span ref="top"></span>
             <span ref="bottom"></span>
         </button>
-    </header>
+
 
     <div ref="drawer" class="fixed
                 top-0 left-0 
