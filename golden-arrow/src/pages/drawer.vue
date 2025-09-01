@@ -1,14 +1,13 @@
 <template>
-    <button ref="logo" class="hamburger fixed cursor-pointer z-50"
-                @click="openMenu">
-        <span></span>
-        <span></span>
+    <button ref="logo" class="hamburger cursor-pointer z-50"
+                @click="toggleMenu">
+        <span ref="top"></span>
+        <span ref="bottom"></span>
     </button>
 
     <div ref="drawer" class="fixed
                 top-0 left-0 
                 bg-[var(--ga-ink)]
- 
                 h-screen w-screen
                 overflow-x-hidden"
                 @click.self="closeMenu"
@@ -20,7 +19,7 @@
                 gap-6
                 text-left">
                 <li><RouterLink to="/" @click="closeMenu">Home</RouterLink></li>
-                <li><RouterLink to="/collectionNEW" @click="closeMenu">Collection</RouterLink></li>
+                <li><RouterLink to="/collection" @click="closeMenu">Collection</RouterLink></li>
                 <li><RouterLink to="/story" @click="closeMenu">Our Story</RouterLink></li>
             </ul>
     </div>
@@ -28,43 +27,65 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import SplitText from 'gsap/SplitText';
 import gsap from 'gsap';
-
 gsap.registerPlugin(SplitText)
-const drawer = ref(null)
-const logo = ref(null)
-const text = ref(null)
 
+const drawer = ref(null)
+const top = ref(null)
+const bottom = ref(null)
+const text = ref(null)
+const isOpen = ref(false)
+
+let tl: gsap.core.Timeline;
+let split: SplitText;
+
+function toggleMenu(){
+    isOpen.value? closeMenu() : openMenu()
+}
 
 function openMenu(){
-    gsap.to(drawer.value , {xPercent:0, duration:0.2, ease: 'power2.out', onComplete:textAnimation})
-    
+    isOpen.value = true;
+    gsap.to(drawer.value , {
+        xPercent:0, 
+        duration:0.5, 
+        ease: 'power3.out', 
+        onStart: () => { tl.restart(true).delay(); }
+    })
+    gsap.to(top.value, {y:5, rotate:45, duration: 0.3, ease:'power3.in'})
+    gsap.to(bottom.value, {y:-5, rotate:-45, duration: 0.3, ease:'power3.in'})
 }
 
 function closeMenu(){
-    gsap.to(drawer.value, {xPercent:-100, duration:0.2, ease:'power2.in'})
+    isOpen.value = false;
+    tl?.timeScale(2).reverse().eventCallback('onReverseComplete', 
+    () => {gsap.to(drawer.value, 
+        {xPercent: -100, duration:0.3, ease:'power3.out'})})
+    gsap.to(top.value, {y:0, rotate:0, duration: 0.3, ease:'power3.inOut'})
+    gsap.to(bottom.value, {y:0, rotate:0, duration: 0.3, ease:'power3.inOut'})
 }
-
-function textAnimation(){
-    const split = new SplitText(text.value, {type: "words, chars, lines"});
-    gsap.set(text.value, { visibility: 'visible' })
-    gsap.from(split.lines, {
-        y:25,
-        duration:0.6,
-        opacity:0,
-        stagger:0.4,
-        ease: 'circ.out',
-        onComplete: () => split.revert()
-    })
-}
-
 
 onMounted(() => {
     gsap.set(drawer.value, {xPercent:-100});
-    // gsap.set(text.value, { autoAlpha: 0 })
+    split = new SplitText(text.value, {type: 'lines', linesClass:'split-line'})
 
+    gsap.set(text.value, {autoAlpha:0})
+    gsap.set(split.lines, {yPercent:100, duration: 1, opacity:0,})
+
+    tl = gsap.timeline({paused: true, defaults:{ease: 'circ.out'}})
+    .set(text.value, {autoAlpha: 1} ,0)
+    .to(split.lines, {
+      yPercent: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.5,
+      clearProps: 'transform,opacity'}, 0)    
+})
+
+onBeforeUnmount(() => {
+    tl?.kill()
+    split?.revert()
 })
 
 </script>
@@ -95,6 +116,5 @@ onMounted(() => {
     flex-direction: column;
     color: var(--ga-silver);
     font-size: var(--ga-navbar-fontSize);
-    visibility: hidden;
 }
 </style>
