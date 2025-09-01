@@ -13,4 +13,4 @@ A modern and responsive **clothing e-commerce website** built with **Vue 3**, **
 - **[GSAP](https://greensock.com/gsap/)** – animations  
 - **[Vue Router](https://router.vuejs.org/)** – client-side routing  
 
-#AIM HIGHER
+# AIM HIGHER
