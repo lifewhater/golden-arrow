@@ -1,7 +1,7 @@
 <template>
     <!-- Layout of the entire collection page -->
     <section class="flex flex-col scroll-smooth" >
-    <div class="w-full h-[600px] fixed bg-transparent">
+    <div class="w-full h-[600px] fixed top-0 bg-transparent">
     <LightRays
       rays-origin="top-center"
       rays-color="#FFB700"
@@ -27,6 +27,7 @@
             <div class="flex
                 flex-wrap
                 justify-center
+                mx-[var(--ga-margin-leftSm)]
                 gap-[var(--ga-card-gap)]
                 mt-[var(--ga-margin-Card)]
                 md:mx-[var(--ga-margin-left)]">
