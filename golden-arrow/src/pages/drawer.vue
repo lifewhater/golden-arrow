@@ -1,5 +1,5 @@
 <template>
-    <button ref="logo" class="hamburger cursor-pointer z-50"
+    <button ref="logo" class="hamburger fixed cursor-pointer z-50"
                 @click="toggleMenu">
         <span ref="top"></span>
         <span ref="bottom"></span>
