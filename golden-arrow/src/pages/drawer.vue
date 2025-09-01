@@ -1,8 +1,8 @@
 <template>
     <button ref="logo" class="hamburger cursor-pointer z-50"
-                @click="openMenu">
-        <span></span>
-        <span></span>
+                @click="toggleMenu">
+        <span ref="top"></span>
+        <span ref="bottom"></span>
     </button>
 
     <div ref="drawer" class="fixed
@@ -33,24 +33,37 @@ import gsap from 'gsap';
 gsap.registerPlugin(SplitText)
 
 const drawer = ref(null)
-const logo = ref(null)
+const top = ref(null)
+const bottom = ref(null)
 const text = ref(null)
+const isOpen = ref(false)
+
 let tl: gsap.core.Timeline;
 let split: SplitText;
 
+function toggleMenu(){
+    isOpen.value? closeMenu() : openMenu()
+}
+
 function openMenu(){
+    isOpen.value = true;
     gsap.to(drawer.value , {
         xPercent:0, 
         duration:0.5, 
         ease: 'power3.out', 
         onStart: () => { tl.restart(true).delay(); }
     })
+    gsap.to(top.value, {y:5, rotate:45, duration: 0.3, ease:'power3.in'})
+    gsap.to(bottom.value, {y:-5, rotate:-45, duration: 0.3, ease:'power3.in'})
 }
 
 function closeMenu(){
+    isOpen.value = false;
     tl?.timeScale(2).reverse().eventCallback('onReverseComplete', 
     () => {gsap.to(drawer.value, 
         {xPercent: -100, duration:0.3, ease:'power3.out'})})
+    gsap.to(top.value, {y:0, rotate:0, duration: 0.3, ease:'power3.inOut'})
+    gsap.to(bottom.value, {y:0, rotate:0, duration: 0.3, ease:'power3.inOut'})
 }
 
 onMounted(() => {
