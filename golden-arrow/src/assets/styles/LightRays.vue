@@ -101,20 +101,6 @@ const hexToRgb = (hex: string): [number, number, number] => {
 const getAnchorAndDir = (origin: RaysOrigin, w: number, h: number): AnchorAndDirection => {
   const outside = 0.2;
   switch (origin) {
-    case 'top-left':
-      return { anchor: [0, -outside * h], dir: [0, 1] };
-    case 'top-right':
-      return { anchor: [w, -outside * h], dir: [0, 1] };
-    case 'left':
-      return { anchor: [-outside * w, 0.5 * h], dir: [1, 0] };
-    case 'right':
-      return { anchor: [(1 + outside) * w, 0.5 * h], dir: [-1, 0] };
-    case 'bottom-left':
-      return { anchor: [0, (1 + outside) * h], dir: [0, -1] };
-    case 'bottom-center':
-      return { anchor: [0.5 * w, (1 + outside) * h], dir: [0, -1] };
-    case 'bottom-right':
-      return { anchor: [w, (1 + outside) * h], dir: [0, -1] };
     default:
       return { anchor: [0.5 * w, -outside * h], dir: [0, 1] };
   }

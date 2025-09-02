@@ -119,5 +119,6 @@ onBeforeUnmount(() => {
     flex-direction: column;
     color: var(--ga-silver);
     font-size: var(--ga-navbar-fontSize);
+    font-family: 'Labels';
 }
 </style>

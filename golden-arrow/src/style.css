@@ -4,10 +4,18 @@
 
 @font-face {
   font-family: "Golden Arrow";
-  src: url("./assets/fonts/Attic.otf") format("opentype"); /* note: fonts (not font), and a space before format() */
+  src: url("./assets/fonts/Deathmatch-K71A7.ttf") format("truetype"); /* note: fonts (not font), and a space before format() */
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Labels";
+  src: url("./assets/fonts/Umbara-AReLL.otf") format("opentype"); /* note: fonts (not font), and a space before format() */
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 ::-webkit-scrollbar{
     display: none;

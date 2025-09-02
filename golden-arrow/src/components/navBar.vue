@@ -63,7 +63,7 @@ import drawer from '../pages/drawer.vue';
     font-family: 'Golden Arrow';
     position: fixed;
     left: 50%;
-    margin-top: 3.5rem;
+    margin-top: 2rem;
     transform: translateX(-50%);
     cursor: pointer;
 }
@@ -73,5 +73,6 @@ import drawer from '../pages/drawer.vue';
     color: var(--ga-silver);
     font-size: var(--ga-navbar-fontSize);
     position: fixed;
+    font-family: 'Labels';
 }
 </style>
