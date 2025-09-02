@@ -13,22 +13,21 @@
 
 <script setup lang="ts">
 import { useProductStore } from '@/stores/products';
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 import { RouterLink } from 'vue-router'
 import gsap from 'gsap';
 
 const store = useProductStore()
 
-onMounted(async () => {
-    gsap.from('.parent', { y: 30, duration: 0.5, opacity: 0, ease: 'power3.out' })
-    if (!store.isLoaded) {
-        try {
-            console.log("Store loaded")
-            await store.load()
-        } catch (error) {
-            console.error(error)
-        }
-    }
+onMounted(() => {
+  const ctx = gsap.context(() => {
+    gsap.fromTo(
+      '.parent',
+      { y: 30, autoAlpha: 0 },
+      { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out', immediateRender: false }
+    )
+  })
+  onUnmounted(() => ctx.revert())
 })
 
 </script>
@@ -37,6 +36,7 @@ onMounted(async () => {
 .parent {
     display: grid;
     height: 100vh;
+    visibility: hidden;
     overflow-y: auto;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;

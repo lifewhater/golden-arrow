@@ -16,10 +16,11 @@
         <ul class="menu hidden
                         gap-5
                         md:ml-1.5  
-                        items-center                     
+                        items-center 
+                        ml-[var(--ga-margin-leftSm)]                    
                         lg:flex 
                         lg:gap-10
-                        lg:ml-(--ga-margin-left)">
+                        lg:ml-[var(--ga-margin-left)]">
             <li class=""><RouterLink to="/">Home</RouterLink></li>
             <li class=""><RouterLink to="/collection">Collection</RouterLink></li>
             <li class=""><RouterLink to="/story">Our Story</RouterLink></li>

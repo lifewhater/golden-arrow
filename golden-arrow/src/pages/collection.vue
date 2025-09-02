@@ -1,9 +1,10 @@
 <template>
     <!-- Layout of the entire collection page -->
-    <section class="flex flex-col scroll-smooth">
+    <section class="flex flex-col scroll-smooth style">
         <div class="w-full h-screen fixed top-0">
-            <LightRays rays-origin="top-center" rays-color="#FFB700" :rays-speed="1.5" :light-spread="0.8"
+            <LightRays rays-origin="top-center" rays-color="#FFB700" :rays-speed="1" :light-spread="0.5"
                 :ray-length="6" :follow-mouse="true" :mouse-influence="0.1" :noise-amount="0" :distortion="0.0"
+                :fade-distance="0.5"
                 class-name="custom-rays" class="z-0"/>
         </div>
         <!-- Main label -->
@@ -24,7 +25,7 @@
                 mt-[var(--ga-margin-Card)]
                 md:mx-[var(--ga-margin-left)]">
 
-            <RouterLink v-if="store.isLoaded" v-for="p in store.list" :key="p.slug" class="group flex flex-col
+            <RouterLink v-show="store.isLoaded" v-for="p in store.list" :key="p.slug" class="group flex flex-col
                 h-[var(--ga-card-height)] w-[var(--ga-card-width)] " :to="`/collection/${p.slug}`">
 
                 <div class="aspect-[5/6] relative overflow-hidden rounded-[var(--ga-card-r)]">
@@ -74,4 +75,8 @@ onMounted(async () => {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.style{
+    font-family: 'Labels';
+}
+</style>

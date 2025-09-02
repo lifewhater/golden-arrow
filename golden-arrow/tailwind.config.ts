@@ -38,6 +38,7 @@ export default {
       /* optional: fonts (utility: font-brand) */
         fontFamily: {
         golden: ['"Golden Arrow"', 'serif'],
+        labels: ['"Labels"', 'serif']
       },
 
       width: {

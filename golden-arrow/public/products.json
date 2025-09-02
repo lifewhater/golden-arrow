@@ -4,34 +4,41 @@
         "name": "Apollo",
         "price": 35,
         "category": "t-shirt",
-        "images": ["/img/model1-1.avif"]
+        "images": ["/img/model1-1.avif", "/img/model1-2.avif" ,"/img/model1-3.avif"]
     },
     {
         "slug": "hermes",
         "name": "Hermes",
         "price": 35,
         "category": "t-shirt",
-        "images": ["/img/model1-2.avif"]
+        "images": ["/img/model1-2.avif", "/img/model1-1.avif" ,"/img/model1-3.avif"]
     },
     {
         "slug": "artemis",
         "name": "Artemis",
         "price": 35,
         "category": "t-shirt",
-        "images": ["/img/model1-3.avif"]
+        "images": ["/img/model1-3.avif", "/img/model1-2.avif" ,"/img/model1-1.avif"]
     },
     {
         "slug": "poseidon",
         "name": "Poseidon",
         "price": 35,
         "category": "t-shirt",
-        "images": ["/img/model2-1.avif"]
+        "images": ["/img/model2-3.avif", "/img/model2-2.avif" ,"/img/model2-1.avif"]
     },
     {
         "slug": "atlas",
         "name": "Atlas",
         "price": 35,
         "category": "t-shirt",
-        "images": ["/img/model2-2.avif"]
+        "images": ["/img/model2-1.avif", "/img/model2-2.avif" ,"/img/model2-3.avif"]
+    },
+        {
+        "slug": "medusa",
+        "name": "Medusa",
+        "price": 35,
+        "category": "t-shirt",
+        "images": ["/img/model2-2.avif", "/img/model2-3.avif" ,"/img/model2-1.avif"]
     }
 ]
