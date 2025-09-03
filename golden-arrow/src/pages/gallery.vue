@@ -1,18 +1,35 @@
 <template>
-  <div class=" flex flex-row h-screen w-screen bg-blue-400/50 text-amber-50 text-2xl">
 
-    <div class="flex flex-col h-full w-1/2">
+  <section>
+    <!-- IMAGES LEFT SIDE-->
+    <div class="flex flex-col h-full w-1/2 z-0">
       <div v-for="(img, i) in product?.images" :key="i" class="relative w-full h-full ">
         <img ref="images" :src="img" :alt="product?.name" class="object-cover aspect-[5/6] h-full w-full">
       </div>
     </div>
-    <aside class="bg-red-400/50 w-1/2 h-screen sticky top-0">
-      <div class="w-full h-full rounded-xl bg-white/10 flex items-center justify-center text-3xl">
-        WORLD
-      </div>
-    </aside>
 
-  </div>
+    <!-- TEXT RIGHT SIDE-->
+    <div ref="aside" class="h-screen w-1/2 fixed top-0 right-0 z-50 m-[var(--ga-margin-left)]">
+      <div class="z-50font flex flex-col gap-[var(--ga-margin-Card)]
+      ml-[var(--ga-label-left)] mt-[var(--ga-label-margin)]">
+
+      <!-- NAME AND PRICE -->
+        <div class="flex flex-row justify-between">
+          <div class="text-5xl text-white font">
+            {{ product?.name }}
+          </div>
+          <div class="text-5xl text-white font">
+            ${{ product?.price }}
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="text-[var(--ga-ink-weak)] text-2xl">
+          color
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -22,12 +39,15 @@ import { useRoute } from 'vue-router';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-
 gsap.registerPlugin(ScrollTrigger)
 
+
 const images = ref([])
+const aside = ref(null)
+
 const store = useProductStore()
 const route = useRoute()
+
 const slug = computed(() => route.params.slug as string)
 const product = computed(() => store.list.find((p) => p.slug === slug.value))
 
@@ -45,24 +65,37 @@ onMounted(async () => {
 
   //GSAP Animation
 
-
-  images.value.forEach((el) => {
-    gsap.from(el, {
-
+  images.value.forEach((element) => {
+    gsap.from(element, {
       scrollTrigger: {
-        trigger: el,
+        trigger: element,
         pin: true,
         start: 'top top',
         end: 'bottom top',
-        markers: true,
-        anticipatePin: 1,
+        pinSpacing: false,
+        scrub: 3,
       }
     })
   })
+
+  // gsap.to(aside.value, {
+  //   scrollTrigger: {
+  //     trigger: aside.value,
+  //     start: 'top top',
+  //     end: 'bottom top',
+  //     pin: true,
+  //     pinSpacing: false,
+  //     markers: true,
+  //   }
+  // })
 
 })
 
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.font {
+  font-family: 'Labels';
+}
+</style>
