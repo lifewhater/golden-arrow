@@ -1,6 +1,6 @@
 <template>
 
-    <nav class="navbar">
+    <nav class="navbar mt-[var(--ga-margin-navBar)]">
  
         <!-- Header logo or title -->
         <RouterLink class="header" to="/">GA</RouterLink>
@@ -51,7 +51,6 @@ import drawer from '../pages/drawer.vue';
     display: flex; /* Use flexbox for layout */
     width: 100%; /* Full width of the container */
     top: 0;
-    height: 8rem;
     position: fixed;
     justify-content: space-between;
     align-items: center;

@@ -21,6 +21,9 @@
 
         /* margins */
         --ga-margin-top: 12rem;
+        --ga-margin-topSm: 10rem;
+
+        --ga-margin-navBar: 2rem;
         --ga-margin-left: 3.5rem;
         --ga-margin-leftSm: 1.5rem;
         --ga-margin-Card: 3rem;

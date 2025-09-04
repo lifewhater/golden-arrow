@@ -13,7 +13,7 @@
       <div class="z-50font flex flex-col gap-[var(--ga-margin-Card)]
       ml-[var(--ga-label-left)] mt-[var(--ga-label-margin)]">
 
-      <!-- NAME AND PRICE -->
+        <!-- NAME AND PRICE -->
         <div class="flex flex-row justify-between">
           <div class="text-5xl text-white font">
             {{ product?.name }}
@@ -77,18 +77,6 @@ onMounted(async () => {
       }
     })
   })
-
-  // gsap.to(aside.value, {
-  //   scrollTrigger: {
-  //     trigger: aside.value,
-  //     start: 'top top',
-  //     end: 'bottom top',
-  //     pin: true,
-  //     pinSpacing: false,
-  //     markers: true,
-  //   }
-  // })
-
 })
 
 
