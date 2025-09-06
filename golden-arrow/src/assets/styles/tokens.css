@@ -8,7 +8,7 @@
         --ga-gold: #FCA311;
         --ga-blue: #14213D;
         --ga-silver: #E5E5E5;
-        --ga-frost-bg: rgba(0 0 0 / 0.39);
+        --ga-frost-bg: rgba(66 66 66 / 0.49);
         --ga-frost-border: rgba(255, 255, 255, 0.15);
 
         /* text fonts and sizes */
@@ -39,6 +39,9 @@
         --ga-card-height: 40rem;
         --ga-card-width: 26.6rem;
         
+        /* button style */
+        --ga-button-width: 2.5rem;
+        --ga-button-height: 2.5rem;
 
         /* effects */
         --ga-blur: 12px;
