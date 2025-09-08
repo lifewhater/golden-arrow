@@ -1,11 +1,12 @@
 <template>
     <button class="cursor-pointer">
         <div class="flex justify-center items-center rounded-[var(--ga-card-r)] bg-[var(--ga-frost-bg)]
-         h-[var(--ga-button-height)] w-[var(--ga-button-width)] z-50 mr-[var(--ga-margin-leftSm)] 
+         h-[var(--ga-button-height)] w-[var(--ga-button-width)] z-50 
          border-[var(--ga-frost-border)] border-1">
-            <PlusIcon class="h-6 w-6 stroke-8 fill-none stroke-[var(--ga-silver)]
-            transition-shadow b
-            hover:stroke-[var(--ga-gold)] hover:fill-[var(--ga-gold)] hover:animate-pulse" />
+
+            <PlusIcon class="h-6 w-6 stroke-1 fill-[var(--ga-silver)] 
+            hover:stroke-[var(--ga-gold)] hover:fill-[var(--ga-gold-weak)] hover:animate-pulse ease-in" />
+
         </div>
     </button>
 </template>

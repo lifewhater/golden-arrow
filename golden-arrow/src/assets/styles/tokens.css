@@ -6,6 +6,7 @@
         --ga-ink: #000000;
         --ga-ink-weak: #959393;
         --ga-gold: #FCA311;
+        --ga-gold-weak:#F0AD41CC;
         --ga-blue: #14213D;
         --ga-silver: #E5E5E5;
         --ga-frost-bg: rgba(66 66 66 / 0.49);
@@ -23,6 +24,8 @@
         --ga-margin-top: 12rem;
         --ga-margin-topSm: 10rem;
 
+        --ga-padding-top: 2rem;
+
         --ga-margin-navBar: 2rem;
         --ga-margin-left: 3.5rem;
         --ga-margin-leftSm: 1.5rem;
@@ -36,7 +39,7 @@
         --ga-card-w: 35rem;
         --ga-card-r: 00.5rem;
         --ga-card-gap: 1rem;
-        --ga-card-height: 40rem;
+        --ga-card-height: 42rem;
         --ga-card-width: 26.6rem;
         
         /* button style */

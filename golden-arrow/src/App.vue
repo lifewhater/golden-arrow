@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import navBar from './components/navBar.vue';
 import './style.css'
 defineOptions({ name: 'Home' })
