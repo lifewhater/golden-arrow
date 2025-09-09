@@ -2,21 +2,11 @@
     <!-- Layout of the entire collection page -->
     <section class="flex flex-col scroll-smooth style">
 
-         <div class="pointer-events-none fixed inset-0 z-0">
-      <LightRays
-        rays-origin="top-center"
-        rays-color="#FFB700"
-        :rays-speed="1"
-        :light-spread="0.5"
-        :ray-length="6"
-        :follow-mouse="true"
-        :mouse-influence="0.1"
-        :noise-amount="0"
-        :distortion="0.02"
-        :fade-distance="1"
-        class-name="custom-rays"
-      />
-    </div>
+        <div class="pointer-events-none fixed inset-0 z-0">
+            <LightRays rays-origin="top-center" rays-color="#FFAB2D" :rays-speed="1" :light-spread="0.5" :ray-length="6"
+                :follow-mouse="true" :mouse-influence="0.1" :noise-amount="0" :distortion="0.02" :fade-distance="1"
+                class-name="rays" />
+        </div>
         <!-- Main label -->
         <h1 class="text-[var(--ga-silver)]
                 mt-[var(--ga-margin-title)]
@@ -33,8 +23,9 @@
                     mt-[var(--ga-margin-Card)]
                     gap-[var(--ga-card-gap)]
                     md:mx-[var(--ga-margin-left)]">
+
             <div v-show="store.isLoaded" v-for="p in store.list" :key="p.slug"
-                class="group flex flex-col h-[var(--ga-card-height)] w-[var(--ga-card-width)]">
+                class="group reveal-card flex flex-col h-[var(--ga-card-height)] w-[var(--ga-card-width)]">
                 <div class="aspect-[5/6] relative overflow-hidden rounded-[var(--ga-card-r)]">
                     <RouterLink :to="`/collection/${p.slug}`">
                         <img :src="p.images[0]" :alt="p.name"
@@ -47,8 +38,10 @@
                         {{ p.name }}
                         <addToCart :product="p" class="cursor-pointer" />
                     </div>
-                    <div class="text-[length:var(--ga-price-size)] text-[var(--ga-ink-weak)]">
+                    <div class="flex flex-row 
+                    justify-between text-[length:var(--ga-price-size)] text-[var(--ga-ink-weak)]">
                         ${{ p.price }}
+                        <color class="cursor-pointer mr-1" />
                     </div>
                 </div>
             </div>
@@ -62,10 +55,13 @@
 import { onMounted, nextTick } from 'vue';
 import { RouterLink } from 'vue-router';
 import { useProductStore } from '@/stores/products';
-import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LightRays from '@/assets/styles/LightRays.vue';
+import color from '@/components/color.vue'
 import addToCart from '@/assets/addToCart.vue';
+import gsap from 'gsap';
 
+gsap.registerPlugin(ScrollTrigger)
 const store = useProductStore()
 
 onMounted(async () => {
@@ -77,14 +73,23 @@ onMounted(async () => {
         }
     }
     await nextTick()
-    gsap.from('.group', {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.03
+
+    gsap.set('.reveal-card', { autoAlpha: 0, y: 20, willChange: 'transform, opacity' })
+
+    ScrollTrigger.batch('.reveal-card', {
+        start: 'top 85%',
+        onEnter: (batch) => {
+            gsap.to(batch, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.6,
+                ease: 'power2.out',
+                clearProps: 'transform,opacity'
+            })
+
+        },
+        once: true
     })
-    
 
 })
 

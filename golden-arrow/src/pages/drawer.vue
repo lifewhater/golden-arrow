@@ -41,6 +41,7 @@ const isOpen = ref(false)
 
 let tl: gsap.core.Timeline;
 let split: SplitText;
+let hamburgertl: gsap.core.Timeline;
 
 function toggleMenu(){
     isOpen.value? closeMenu() : openMenu()
@@ -54,8 +55,7 @@ function openMenu(){
         ease: 'power3.out', 
         onStart: () => { tl.restart(true); }
     })
-    gsap.to(top.value, {y:5, rotate:45, duration: 0.3, ease:'power3.in'})
-    gsap.to(bottom.value, {y:-5, rotate:-45, duration: 0.3, ease:'power3.in'})
+    hamburgertl.timeScale(1).play(0)
 }
 
 function closeMenu(){
@@ -63,9 +63,11 @@ function closeMenu(){
     tl?.timeScale(2).reverse().eventCallback('onReverseComplete', 
     () => {gsap.to(drawer.value, 
         {xPercent: -100, duration:0.3, ease:'power3.out'})})
-    gsap.to(top.value, {y:0, rotate:0, duration: 0.3, ease:'power3.inOut'})
-    gsap.to(bottom.value, {y:0, rotate:0, duration: 0.3, ease:'power3.inOut'})
+    
+    hamburgertl.timeScale(1.3).reverse()
 }
+
+
 
 onMounted(() => {
     gsap.set(drawer.value, {xPercent:-100});
@@ -74,6 +76,11 @@ onMounted(() => {
     gsap.set(text.value, {autoAlpha:0})
     gsap.set(split.lines, {yPercent:100, duration: 1, opacity:0,})
 
+    //makes sure the hamburger starts fresh
+    gsap.set([top.value, bottom.value], {y: 0, rotate: 0, scaleX: 1})
+
+
+    // ========== SPLIT TEXT TIMELINE ===========
     tl = gsap.timeline({paused: true, defaults:{ease: 'circ.out'}})
     .set(text.value, {autoAlpha: 1} ,0)
     .to(split.lines, {
@@ -82,7 +89,19 @@ onMounted(() => {
       duration: 1,
       stagger: 0.5,
       clearProps: 'transform,opacity'}, 0)    
+
+// ============ HAMBURGER TIMELINE =============
+hamburgertl = gsap.timeline({paused: true, defaults: {ease: 'circ.out'}})
+    .addLabel('collapse')
+    .to(top.value, {y: 6, duration: 0.3}, 'collapse')
+    .to(bottom.value, {y:-6, duration: 0.3}, 'collapse')
+
+    .addLabel('cross')
+    .to(top.value, { y: 5, rotate: 45, duration: 0.2}, 'cross')
+    .to(bottom.value, {y: -5, rotate: -45, duration: 0.2}, 'cross')
+
 })
+
 
 onBeforeUnmount(() => {
     tl?.kill()
