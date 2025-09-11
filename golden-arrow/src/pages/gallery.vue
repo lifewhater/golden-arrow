@@ -21,28 +21,36 @@
 
     <!-- TEXT -->
     <div class="md:fixed md:ml-[var(--ga-margin-left)] md:w-1/2 
-    h-auto w-full top-0 right-0 z-50">
+    h-auto w-full top-0 right-0 z-50 ">
 
       <div class="z-50 flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
         mt-[var(--ga-label-top)]
-        md:ml-[var(--ga-label-left)] md:mt-[var(--ga-label-margin)] 
-        md:gap-[var(--ga-margin-Card)]">
+        md:mx-[var(--ga-margin-left)] md:mt-[var(--ga-label-margin)] 
+         bg-violet-300/25">
 
         <!-- NAME AND PRICE -->
-        <div class="flex flex-row justify-between">
+        <div class="flex flex-row place-content-between bg-red-100/25">
           <div class="text-5xl text-white font">
             {{ product?.name }}
           </div>
 
-          <div class="text-5xl text-white font md:mr-[var(--ga-margin-left)]">
+          <div class="text-5xl text-white font ">
             ${{ product?.price }}
           </div>
         </div>
 
         <!-- Details -->
-        <div class="text-[var(--ga-ink-weak)] text-2xl">
-          color
+        <div class="flex flex-col gap-y-5 bg-blue-100/25">
+          <div class="h-5 border-1 border-b-[var(--ga-silver)]/25
+          border-l-[var(--ga-silver)]/25 border-r-[var(--ga-silver)]/25"></div>
+          <p class="text-lg text-white uppercase">Color</p>
+          <color class=""/>
         </div>
+
+        <!-- ADD TO CART -->
+         <div class="bg-red-500/25 h-15 w-full">
+          <AddToCartBig />
+         </div>
       </div>
     </div>
 
@@ -53,6 +61,8 @@
 import { useProductStore } from '@/stores/products';
 import { onMounted, computed, ref, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
+import color from '@/components/color.vue';
+import AddToCartBig from '@/components/AddToCartBig.vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 

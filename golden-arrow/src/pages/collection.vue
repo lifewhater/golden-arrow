@@ -33,10 +33,11 @@
                     </RouterLink>
                 </div>
                 <div class="flex flex-col justify-start">
-                    <div class="flex flex-row text-[length:var(--ga-label-fontSize)] text-[var(--ga-silver)]
-                        pt-[var(--ga-padding-top)] justify-between">
+                    <div class="flex flex-row text-[length:var(--ga-label-fontSize)] 
+                    text-[var(--ga-silver)] pt-[var(--ga-padding-top)] justify-between">
                         {{ p.name }}
-                        <addToCart :product="p" class="cursor-pointer" />
+                        <AddToCartSmall :product="p" class="md:hidden cursor-pointer" />
+                        
                     </div>
                     <div class="flex flex-row 
                     justify-between text-[length:var(--ga-price-size)] text-[var(--ga-ink-weak)]">
@@ -58,8 +59,8 @@ import { useProductStore } from '@/stores/products';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LightRays from '@/assets/styles/LightRays.vue';
 import color from '@/components/color.vue'
-import addToCart from '@/assets/addToCart.vue';
 import gsap from 'gsap';
+import AddToCartSmall from '@/components/addToCartSmall.vue';
 
 gsap.registerPlugin(ScrollTrigger)
 const store = useProductStore()
