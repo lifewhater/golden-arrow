@@ -60,7 +60,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LightRays from '@/assets/styles/LightRays.vue';
 import color from '@/components/color.vue'
 import gsap from 'gsap';
-import AddToCartSmall from '@/components/addToCartSmall.vue';
+import AddToCartSmall from '@/components/AddToCartSmall.vue';
 
 gsap.registerPlugin(ScrollTrigger)
 const store = useProductStore()
