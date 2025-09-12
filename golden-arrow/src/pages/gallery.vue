@@ -2,7 +2,7 @@
   <section class="">
 
     <!-- DESKTOP VIEW-->
-    <div class="hidden md:block md:flex-col md:h-full md:w-1/2 md:z-0">
+    <div class="hidden md:block md:flex-col md:h-full md:w-1/2">
       <div v-for="(img, i) in product?.images" :key="i" class="relative w-full h-full">
         <img ref="desktop" :src="img" :alt="product?.name" class="object-cover aspect-[5/6] h-full w-full"
           loading="lazy">
@@ -21,35 +21,36 @@
 
     <!-- TEXT -->
     <div class="md:fixed md:ml-[var(--ga-margin-left)] md:w-1/2 
-    h-auto w-full top-0 right-0 z-50 ">
+    h-auto w-full top-0 right-0 z-50 font">
 
       <div class="z-50 flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
         mt-[var(--ga-label-top)]
         md:mx-[var(--ga-margin-left)] md:mt-[var(--ga-label-margin)] 
-         bg-violet-300/25">
+         ">
 
         <!-- NAME AND PRICE -->
-        <div class="flex flex-row place-content-between bg-red-100/25">
-          <div class="text-5xl text-white font">
+        <div class="flex flex-row place-content-between">
+          <p class="text-[length:var(--ga-gallery-name)] text-white">
             {{ product?.name }}
-          </div>
+          </p>
 
-          <div class="text-5xl text-white font ">
+          <p class="text-[length:var(--ga-gallery-name)] text-white ">
             ${{ product?.price }}
-          </div>
+          </p>
         </div>
 
         <!-- Details -->
-        <div class="flex flex-col gap-y-5 bg-blue-100/25">
+        <div class="flex flex-col gap-y-5">
           <div class="h-5 border-1 border-b-[var(--ga-silver)]/25
           border-l-[var(--ga-silver)]/25 border-r-[var(--ga-silver)]/25"></div>
-          <p class="text-lg text-white uppercase">Color</p>
+          <p class="text-[length:var(--ga-labels)] text-white uppercase">Color</p>
           <color class=""/>
         </div>
 
         <!-- ADD TO CART -->
-         <div class="bg-red-500/25 h-15 w-full">
-          <AddToCartBig />
+         <div class="overflow-hidden
+         flex flex-row w-full object-contain">
+          <AddToCartBig class="" />
          </div>
       </div>
     </div>

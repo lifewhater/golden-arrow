@@ -9,8 +9,8 @@
         --ga-gold-weak:#F0AD41CC;
         --ga-blue: #14213D;
         --ga-silver: #E5E5E5;
-        --ga-frost-bg: rgba(66 66 66 / 0.49);
-        --ga-frost-border: rgba(255, 255, 255, 0.15);
+        --ga-frost-bg: rgba(66 66 66 / 0.31);
+        --ga-frost-border: rgba(255 255 255 / 0.2);
 
         /* text fonts and sizes */
         --ga-header-fontSize: 6rem;
@@ -19,6 +19,11 @@
         --ga-title-fontSize: 4rem;
         --ga-title-fontSm: 3rem;
         --ga-price-size: 1.5rem;
+        
+
+        /* Gallery view */
+        --ga-gallery-name: 3rem;
+        --ga-labels:1.25rem;
 
         /* margins */
         --ga-margin-top: 12rem;

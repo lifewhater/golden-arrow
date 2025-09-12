@@ -36,7 +36,7 @@
                     <div class="flex flex-row text-[length:var(--ga-label-fontSize)] 
                     text-[var(--ga-silver)] pt-[var(--ga-padding-top)] justify-between">
                         {{ p.name }}
-                        <AddToCartSmall :product="p" class="md:hidden cursor-pointer" />
+                        <AddToCartSmall :product="p" class="cursor-pointer" />
                         
                     </div>
                     <div class="flex flex-row 
