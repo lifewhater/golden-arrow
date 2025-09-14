@@ -19,14 +19,14 @@
       </div>
     </div>
 
-    <!-- TEXT -->
+    <!-- LAYOUT -->
     <div class="md:fixed md:ml-[var(--ga-margin-left)] md:w-1/2 
-    h-auto w-full top-0 right-0 z-50 font">
+    h-auto w-full top-0 right-0 font">
 
-      <div class="z-50 flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
+      <!-- PRODUCT CARDS -->
+      <div class="flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
         mt-[var(--ga-label-top)]
-        md:mx-[var(--ga-margin-left)] md:mt-[var(--ga-label-margin)] 
-         ">
+        md:mx-[var(--ga-margin-left)] md:mt-[var(--ga-label-margin)]">
 
         <!-- NAME AND PRICE -->
         <div class="flex flex-row place-content-between">
@@ -39,19 +39,20 @@
           </p>
         </div>
 
-        <!-- Details -->
-        <div class="flex flex-col gap-y-5">
+        <!-- COLOR & SIZE-->
+        <div class="flex flex-col ">
+          <!-- DIVIDER -->
           <div class="h-5 border-1 border-b-[var(--ga-silver)]/25
-          border-l-[var(--ga-silver)]/25 border-r-[var(--ga-silver)]/25"></div>
+          border-l-[var(--ga-silver)]/25 border-r-[var(--ga-silver)]/25 mb-10" />
+          <!-- COLOR CHOOSING -->
           <p class="text-[length:var(--ga-labels)] text-white uppercase">Color</p>
-          <color class=""/>
+          <color class="" />
         </div>
 
         <!-- ADD TO CART -->
-         <div class="overflow-hidden
-         flex flex-row w-full object-contain">
-          <AddToCartBig class="" />
-         </div>
+        <AddToCartBig class="" />
+        
+
       </div>
     </div>
 

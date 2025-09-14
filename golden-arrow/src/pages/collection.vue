@@ -42,7 +42,6 @@
                     <div class="flex flex-row 
                     justify-between text-[length:var(--ga-price-size)] text-[var(--ga-ink-weak)]">
                         ${{ p.price }}
-                        <color class="cursor-pointer mr-1" />
                     </div>
                 </div>
             </div>
@@ -78,12 +77,13 @@ onMounted(async () => {
     gsap.set('.reveal-card', { autoAlpha: 0, y: 20, willChange: 'transform, opacity' })
 
     ScrollTrigger.batch('.reveal-card', {
-        start: 'top 85%',
+        start: 'top 75%',
         onEnter: (batch) => {
             gsap.to(batch, {
                 autoAlpha: 1,
                 y: 0,
                 duration: 0.6,
+                stagger: 0.15,
                 ease: 'power2.out',
                 clearProps: 'transform,opacity'
             })

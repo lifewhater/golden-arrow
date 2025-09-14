@@ -1,11 +1,16 @@
 <template>
-    <div class=" w-full h-10">
-        <div class="flex place-items-center justify-center bg-[var(--ga-frost-bg)] h-full w-full rounded-[var(--ga-card-r)]
-        transition duration-300 ease-in-out hover:animate-pulse
-            border-[1px] border-[var(--ga-frost-border)] text-[var(--ga-silver)] hover:bg-white hover:text-black">
-            <p class="text-[length:var(--ga-labels)] ">Add to Bag</p>
+    <div class="w-full h-10 flex flex-row gap-[var(--ga-card-gap)]">
+        <div class="flex place-items-center justify-center bg-[var(--ga-silver)] h-full w-1/2 rounded-[var(--ga-card-r)]
+        transition duration-300 ease-in-out border-[1px] border-[var(--ga-frost-border)] text-[var(--ga-ink)] 
+        hover:bg-neutral-300/75">
+            <p class="text-[length:var(--ga-labels)]"> Buy Now </p>
          </div>
-         
+
+         <div class="flex place-items-center justify-center bg-[var(--ga-frost-bg)] h-full w-1/2 rounded-[var(--ga-card-r)]
+        transition duration-300 ease-in-out border-[1px] border-[var(--ga-frost-border)] text-[var(--ga-silver)] 
+        hover:bg-neutral-800">
+            <p class="text-[length:var(--ga-labels)]"> Add to Cart </p>
+         </div>
     </div>
 </template>
 
