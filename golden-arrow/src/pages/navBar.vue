@@ -3,7 +3,7 @@
     <nav class="navbar mt-[var(--ga-margin-navBar)]">
  
         <!-- Header logo or title -->
-        <RouterLink class="header" to="/">GA</RouterLink>
+        <RouterLink class="header leading-none" to="/">GA</RouterLink>
         
         <!-- Hamburger menu for mobile view and button -->
         <div class="lg:hidden 
@@ -21,6 +21,7 @@
                         lg:flex 
                         lg:gap-10
                         lg:ml-[var(--ga-margin-left)]">
+                        
             <li class=""><RouterLink to="/">Home</RouterLink></li>
             <li class=""><RouterLink to="/collection">Collection</RouterLink></li>
             <li class=""><RouterLink to="/story">Our Story</RouterLink></li>
@@ -55,6 +56,7 @@ import drawer from '../pages/drawer.vue';
     justify-content: space-between;
     align-items: center;
     z-index: 50;
+    cursor: pointer;
 }
 .header {  
     font-size: var(--ga-header-fontSize);

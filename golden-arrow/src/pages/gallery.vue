@@ -23,18 +23,18 @@
     <div class="md:fixed md:ml-[var(--ga-margin-left)] md:w-1/2 
     h-auto w-full top-0 right-0 font">
 
-      <!-- PRODUCT CARDS -->
+      <!-- PRODUCT CARDS LAYOUT-->
       <div class="flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
         mt-[var(--ga-label-top)]
         md:mx-[var(--ga-margin-left)] md:mt-[var(--ga-label-margin)]">
 
         <!-- NAME AND PRICE -->
-        <div class="flex flex-row place-content-between">
-          <p class="text-[length:var(--ga-gallery-name)] text-white">
+        <div class="flex flex-row place-content-between text-[length:var(--ga-gallery-name)] text-white">
+          <p class="">
             {{ product?.name }}
           </p>
 
-          <p class="text-[length:var(--ga-gallery-name)] text-white ">
+          <p class="">
             ${{ product?.price }}
           </p>
         </div>
