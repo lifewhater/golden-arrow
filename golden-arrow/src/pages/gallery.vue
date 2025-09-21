@@ -50,7 +50,14 @@
         </div>
 
         <!-- ADD TO CART -->
-        <AddToCartBig class="" />
+        <AddToCartBig 
+        v-if="product"
+        :id="product?.slug"
+        :name="product?.name"
+        :price="product?.price"
+        :images="product?.images?.[0]"
+        :qty:"1"
+        :disabled:"!product" />
         
 
       </div>
