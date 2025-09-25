@@ -10,21 +10,22 @@
         <div class="flex place-items-center justify-center bg-[var(--ga-frost-bg)] h-full w-1/2 rounded-[var(--ga-card-r)]
         transition duration-300 ease-in-out border-[1px] border-[var(--ga-frost-border)] text-[var(--ga-silver)]
         hover:bg-neutral-800">
-            <span class="leading-none"> Add to Cart </span>
+            <span class="leading-none" @click="addToCart()"> Add to Cart </span>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { useProductStore } from '@/stores/products';
 import { useRouter } from 'vue-router';
+import { useCartStore } from '@/stores/cart';
 
 interface Props {
-    id: string,
+    slug: string,
     name: string,
     price: number,
-    images: string,
-    qty?: number,
+    category: string,
+    images: string[],
+    quantity?: number,
     disabled?: boolean,
 }
 
@@ -33,12 +34,18 @@ const props = withDefaults(defineProps<Props>(), {
     disabled: false,
 })
 
-const cart = useProductStore();
+const cart = useCartStore();
 const router = useRouter();
 const priceInCents = Math.round(props.price * 100 )
 
 function addToCart() {
-    // cart.add({ id: props.id, name: props.name, price: priceInCents, images: props.images}, props.qty)
+    cart.add({ 
+        slug:props.slug, 
+        name: props.name, 
+        price: priceInCents, 
+        category: props.category, 
+        images: props.images 
+    },  1 )
 }
 
 </script>

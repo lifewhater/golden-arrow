@@ -34,8 +34,8 @@
             {{ product?.name }}
           </p>
 
-          <p class="">
-            ${{ product?.price }}
+          <p v-if="product" class="">
+            ${{ product.price / 100 }}
           </p>
         </div>
 
@@ -52,12 +52,12 @@
         <!-- ADD TO CART -->
         <AddToCartBig 
         v-if="product"
-        :id="product?.slug"
+        :slug="product?.slug"
         :name="product?.name"
+        :category="product.category"
         :price="product?.price"
-        :images="product?.images?.[0]"
-        :qty:"1"
-        :disabled:"!product" />
+        :images="product?.images"
+         />
         
 
       </div>
@@ -76,7 +76,6 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger)
-
 
 const desktop = ref([])
 

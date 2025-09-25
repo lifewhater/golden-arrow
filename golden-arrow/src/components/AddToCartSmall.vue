@@ -15,8 +15,8 @@
     import PlusIcon from '@/assets/svg/plus-solid-full.svg'
 
     // add to cart functionality
-    import { useProductStore } from '@/stores/products';
-
+    import { useCartStore } from '@/stores/cart';
+    
 </script>
 
 <style scoped>
