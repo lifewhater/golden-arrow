@@ -2,11 +2,12 @@
     <!-- Layout of the entire collection page -->
     <section class="flex flex-col scroll-smooth style">
 
-        <div class="pointer-events-none fixed inset-0 z-0">
+        <!-- Light Rays Effect -->
+        <!-- <div class="pointer-events-none fixed inset-0 z-0">
             <LightRays rays-origin="top-center" rays-color="#DBA000" :rays-speed="1" :light-spread="0.5" :ray-length="6"
                 :follow-mouse="true" :mouse-influence="0.1" :noise-amount="0" :distortion="0.02" :fade-distance="1"
                 class-name="rays" />
-        </div>
+        </div> -->
         <!-- Main label -->
         <h1 class="text-[var(--ga-silver)]
                 mt-[var(--ga-margin-title)]
