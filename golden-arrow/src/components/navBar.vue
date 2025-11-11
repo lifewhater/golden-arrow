@@ -1,6 +1,6 @@
 <template>
 
-    <nav class="navbar mt-[var(--ga-margin-navBar)]">
+    <nav class="navbar mt-(--ga-margin-navBar)">
  
         <!-- Header logo or title -->
         <RouterLink class="header leading-none" to="/">GA</RouterLink>
@@ -17,17 +17,17 @@
                         gap-5
                         md:ml-1.5  
                         items-center 
-                        ml-[var(--ga-margin-leftSm)]                    
+                        ml-(--ga-margin-leftSm)                    
                         lg:flex 
                         lg:gap-10
-                        lg:ml-[var(--ga-margin-left)]">
+                        lg:ml-(--ga-margin-left)">
                         
             <li class=""><RouterLink to="/">Home</RouterLink></li>
             <li class=""><RouterLink to="/collection">Collection</RouterLink></li>
             <li class=""><RouterLink to="/story">Our Story</RouterLink></li>
         </ul>
-            <RouterLink to="/cart" class="ml-auto mr-[var(--ga-margin-leftSm)]
-                                        md:mr-[var(--ga-margin-left)]">
+            <RouterLink to="/cart" class="ml-auto mr-(--ga-margin-leftSm)
+                                        md:mr-(--ga-margin-left)">
                     <svg class="w-8 h-8 
                         text-gray-800 
                         

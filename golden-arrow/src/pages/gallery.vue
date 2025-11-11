@@ -4,32 +4,32 @@
     <!-- DESKTOP VIEW-->
     <div class="hidden md:block md:flex-col md:h-full md:w-1/2">
       <div v-for="(img, i) in product?.images" :key="i" class="relative w-full h-full">
-        <img ref="desktop" :src="img" :alt="product?.name" class="object-cover aspect-[5/6] h-full w-full"
+        <img ref="desktop" :src="img" :alt="product?.name" class="object-cover aspect-5/6 h-full w-full"
           loading="lazy">
       </div>
     </div>
 
     <!-- MOBILE VIEW -->
     <div class="md:hidden  w-full flex flex-row
-          h-[var(--ga-card-height)] mt-30
+          h-(--ga-card-height) mt-30
           overflow-x-auto snap-x snap-mandatory scroll-smooth">
       <div v-for="(img, i) in product?.images" :key="i" class="shrink-0 w-screen snap-start">
-        <img ref="mobile" :src="img" :alt="product?.name" class="object-cover aspect-[5/6] h-full w-full"
+        <img ref="mobile" :src="img" :alt="product?.name" class="object-cover aspect-5/6 h-full w-full"
           loading="lazy">
       </div>
     </div>
 
     <!-- LAYOUT -->
-    <div class="md:fixed md:ml-[var(--ga-margin-left)] md:w-1/2 
+    <div class="md:fixed md:ml-(--ga-margin-left) md:w-1/2 
     h-auto w-full top-0 right-0 font">
 
       <!-- PRODUCT CARDS LAYOUT-->
-      <div class="flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
-        mt-[var(--ga-label-top)]
-        md:mx-[var(--ga-margin-left)] md:mt-[var(--ga-label-margin)]">
+      <div class="flex flex-col gap-(--ga-margin-Card) mx-(--ga-margin-leftSm)
+        mt-(--ga-label-top)
+        md:mx-(--ga-margin-left) md:mt-(--ga-label-margin)">
 
         <!-- NAME AND PRICE -->
-        <div class="flex flex-row place-content-between text-[length:var(--ga-gallery-name)] text-white">
+        <div class="flex flex-row place-content-between text-(length:--ga-gallery-name) text-white">
           <p class="">
             {{ product?.name }}
           </p>
@@ -42,10 +42,10 @@
         <!-- COLOR & SIZE-->
         <div class="flex flex-col ">
           <!-- DIVIDER -->
-          <div class="h-5 border-1 border-b-[var(--ga-silver)]/25
-          border-l-[var(--ga-silver)]/25 border-r-[var(--ga-silver)]/25 mb-10" />
+          <div class="h-5 border border-b-(--ga-silver)/25
+          border-l-(--ga-silver)/25 border-r-(--ga-silver)/25 mb-10" />
           <!-- COLOR CHOOSING -->
-          <p class="text-[length:var(--ga-labels)] text-white uppercase">Color</p>
+          <p class="text-(length:--ga-labels) text-white uppercase">Color</p>
           <color class="" />
         </div>
 
