@@ -6,10 +6,11 @@
         --ga-ink: #000000;
         --ga-ink-weak: #959393;
         --ga-gold: #FCA311;
+        --ga-gold-weak:#F0AD41CC;
         --ga-blue: #14213D;
         --ga-silver: #E5E5E5;
-        --ga-frost-bg: rgba(0 0 0 / 0.39);
-        --ga-frost-border: rgba(255, 255, 255, 0.15);
+        --ga-frost-bg: rgba(66 66 66 / 0.31);
+        --ga-frost-border: rgba(255 255 255 / 0.2);
 
         /* text fonts and sizes */
         --ga-header-fontSize: 6rem;
@@ -18,26 +19,35 @@
         --ga-title-fontSize: 4rem;
         --ga-title-fontSm: 3rem;
         --ga-price-size: 1.5rem;
+        
+
+        /* Gallery view */
+        --ga-gallery-name: 3rem;
+        --ga-labels:1.25rem;
 
         /* margins */
         --ga-margin-top: 12rem;
         --ga-margin-topSm: 10rem;
-
+        --ga-padding-top: 2rem;
         --ga-margin-navBar: 2rem;
         --ga-margin-left: 3.5rem;
         --ga-margin-leftSm: 1.5rem;
-        --ga-margin-Card: 3rem;
+        --ga-margin-Card: 5rem;
         --ga-margin-title: 20rem;
         --ga-label-margin: 8rem;
         --ga-label-left: 8rem;
+        --ga-label-top:2rem;
 
         /* styling for cards */
         --ga-card-w: 35rem;
-        --ga-card-r: 00.5rem;
+        --ga-card-r: 0.5rem;
         --ga-card-gap: 1rem;
-        --ga-card-height: 40rem;
+        --ga-card-height: 42rem;
         --ga-card-width: 26.6rem;
         
+        /* button style */
+        --ga-button-width: 2.5rem;
+        --ga-button-height: 2.5rem;
 
         /* effects */
         --ga-blur: 12px;
