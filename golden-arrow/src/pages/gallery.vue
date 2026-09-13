@@ -2,47 +2,64 @@
   <section class="">
 
     <!-- DESKTOP VIEW-->
-    <div class="hidden md:block md:flex-col md:h-full md:w-1/2 md:z-0">
+    <div class="hidden md:block md:flex-col md:h-full md:w-1/2">
       <div v-for="(img, i) in product?.images" :key="i" class="relative w-full h-full">
-        <img ref="desktop" :src="img" :alt="product?.name" class="object-cover aspect-[5/6] h-full w-full"
+        <img ref="desktop" :src="img" :alt="product?.name" class="object-cover aspect-5/6 h-full w-full"
           loading="lazy">
       </div>
     </div>
 
     <!-- MOBILE VIEW -->
     <div class="md:hidden  w-full flex flex-row
-          h-[var(--ga-card-height)] mt-30
+          h-(--ga-card-height) mt-30
           overflow-x-auto snap-x snap-mandatory scroll-smooth">
       <div v-for="(img, i) in product?.images" :key="i" class="shrink-0 w-screen snap-start">
-        <img ref="mobile" :src="img" :alt="product?.name" class="object-cover aspect-[5/6] h-full w-full"
+        <img ref="mobile" :src="img" :alt="product?.name" class="object-cover aspect-5/6 h-full w-full"
           loading="lazy">
       </div>
     </div>
 
-    <!-- TEXT -->
-    <div class="md:fixed md:ml-[var(--ga-margin-left)] md:w-1/2 
-    h-auto w-full top-0 right-0 z-50">
+    <!-- LAYOUT -->
+    <div class="md:fixed md:ml-(--ga-margin-left) md:w-1/2 
+    h-auto w-full top-0 right-0 font">
 
-      <div class="z-50 flex flex-col gap-[var(--ga-margin-Card)] mx-[var(--ga-margin-leftSm)]
-        mt-[var(--ga-label-top)]
-        md:ml-[var(--ga-label-left)] md:mt-[var(--ga-label-margin)] 
-        md:gap-[var(--ga-margin-Card)]">
+      <!-- PRODUCT CARDS LAYOUT-->
+      <div class="flex flex-col gap-(--ga-margin-Card) mx-(--ga-margin-leftSm)
+        mt-(--ga-label-top)
+        md:mx-(--ga-margin-left) md:mt-(--ga-label-margin)">
 
         <!-- NAME AND PRICE -->
-        <div class="flex flex-row justify-between">
-          <div class="text-5xl text-white font">
+        <div class="flex flex-row place-content-between text-(length:--ga-gallery-name) text-white">
+          <p class="">
             {{ product?.name }}
-          </div>
+          </p>
 
-          <div class="text-5xl text-white font md:mr-[var(--ga-margin-left)]">
-            ${{ product?.price }}
-          </div>
+          <p v-if="product" class="">
+            ${{ product.price / 100 }}
+          </p>
         </div>
 
-        <!-- Details -->
-        <div class="text-[var(--ga-ink-weak)] text-2xl">
-          color
+        <!-- COLOR & SIZE-->
+        <div class="flex flex-col ">
+          <!-- DIVIDER -->
+          <div class="h-5 border border-b-(--ga-silver)/25
+          border-l-(--ga-silver)/25 border-r-(--ga-silver)/25 mb-10" />
+          <!-- COLOR CHOOSING -->
+          <p class="text-(length:--ga-labels) text-white uppercase">Color</p>
+          <color class="" />
         </div>
+
+        <!-- ADD TO CART -->
+        <AddToCartBig 
+        v-if="product"
+        :slug="product?.slug"
+        :name="product?.name"
+        :category="product.category"
+        :price="product?.price"
+        :images="product?.images"
+         />
+        
+
       </div>
     </div>
 
@@ -53,11 +70,12 @@
 import { useProductStore } from '@/stores/products';
 import { onMounted, computed, ref, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
+import color from '@/components/color.vue';
+import AddToCartBig from '@/components/AddToCartBig.vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger)
-
 
 const desktop = ref([])
 

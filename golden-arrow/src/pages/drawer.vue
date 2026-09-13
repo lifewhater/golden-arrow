@@ -8,14 +8,14 @@
 
     <div ref="drawer" class="fixed
                 top-0 left-0 
-                bg-[var(--ga-ink)]
+                bg-(--ga-ink)
                 h-screen w-screen
                 overflow-x-hidden"
                 @click.self="closeMenu"
                 tabindex="-1">
 
             <ul ref="text" class="menu
-                pl-[var(--ga-margin-leftSm)]
+                pl-(--ga-margin-leftSm)
                 mt-40
                 gap-6
                 text-left">
