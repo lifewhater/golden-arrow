@@ -1,6 +1,6 @@
 # Golden Arrow Club
 
-Vue 3 clothing lookbook / e-commerce frontend. Brand site with collections, product gallery, and GSAP motion. Shopping flow is not finished.
+Vue 3 clothing lookbook / e-commerce frontend. Brand site with collections, product gallery, and GSAP motion. Cart store exists. Cart UI and button wiring are not finished.
 
 App lives in [`golden-arrow/`](./golden-arrow/).
 
@@ -10,9 +10,10 @@ App lives in [`golden-arrow/`](./golden-arrow/).
 - Collection page with card reveal animations
 - Product gallery route (`/collection/:slug`)
 - Responsive nav and mobile drawer
-- Pinia product store loaded from `public/products.json`
+- Pinia product store from `public/products.json` (prices in cents)
+- Pinia cart store: `add`, `remove`, `count`, `subtotal`
+- Gallery **Add to Cart** button calls `cart.add` (`AddToCartBig.vue`)
 - Light Rays WebGL on collection
-- Cart **route** and add-to-cart **button** (UI only)
 
 ## Tech
 
@@ -24,26 +25,27 @@ Ship these before putting a live URL on a resume.
 
 ### Must have (demo)
 
-- [ ] Implement `src/stores/cart.ts` (add, remove, quantity, total, localStorage)
 - [ ] Build `src/pages/cart.vue` (list items, change qty, remove, subtotal)
-- [ ] Wire add-to-cart so the plus button actually adds a product
-- [ ] Add size select (S–XL) before add; gallery currently has no size
-- [ ] Replace gallery placeholder text `"color"` with a real color/size picker
-- [ ] Cart icon badge with item count
+- [ ] Wire `AddToCartSmall.vue` — it imports the cart store but never calls `add`
+- [ ] Wire **Buy Now** (currently no click handler)
+- [ ] Cart icon badge using `cart.count`
+- [ ] Size select (S–XL) before add; gallery has no size
+- [ ] Real color picker (`color.vue` is a dummy yellow circle)
+- [ ] Persist cart to `localStorage`
+- [ ] Fix `clead()` typo in cart store (`clear`)
+- [ ] Fix price math in `AddToCartBig.vue` — JSON is already cents (`3500`), then `price * 100` stores `$3500`
 - [ ] Write real copy on `src/pages/story.vue` (still placeholder)
-- [ ] Unique product photos (six names currently share two image sets; all $35)
+- [ ] Unique product photos (six names share two image sets)
 - [ ] Production build and host `dist` on the domain
 
 ### Cleanup
 
-- [ ] Delete empty stubs: `src/components/navBar.vue`, `src/components/heroPage.vue`
-- [ ] Keep one `addToCart` component (duplicates in `assets/` and `components/`)
+- [ ] Delete empty stubs (`src/components/heroPage.vue` and unused duplicates)
 - [ ] Fix `index.html` `lang="ts"` → `lang="en"`
-- [ ] Push remaining local commits
 
 ### Not required for a portfolio demo
 
-Stripe/PayPal, user accounts, admin, search, Flask backend. This repo is frontend only.
+Stripe/PayPal, user accounts, admin, search. This repo is frontend only. Backend is not in this repo yet.
 
 ## Run
 
