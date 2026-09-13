@@ -4,7 +4,7 @@ import type { Config } from 'tailwindcss'
 export default {
   content: [
     './index.html',
-    './src/**/*.{vue,js,ts,jsx,tsx}',   // ← scan your components/pages
+    './src/**/*.{vue,js,ts,jsx,tsx}',   //scan your components/pages
   ],
   theme: {
     extend: {
