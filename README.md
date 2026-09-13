@@ -1,27 +1,61 @@
-# Golden Arrow Club 
+# Golden Arrow Club
 
-A modern and responsive **clothing e-commerce website** built with **Vue 3**, **TailwindCSS**, and **GSAP animations**. The project is designed to showcase collections, individual products, and the brand’s story in a sleek, interactive way.  
+Vue 3 clothing lookbook / e-commerce frontend. Brand site with collections, product gallery, and GSAP motion. Shopping flow is not finished.
 
-## 🚀 Current Features  
-- **Responsive Design** with mobile navigation drawer   
-- **Product Gallery** with scroll-triggered animations 
-- **GSAP Animations** and smooth transitions
-- **Product Collection** browsing with dynamic routing
-- **Light Rays** WebGL visual effects
-- **State Management** with Pinia stores
+App lives in [`golden-arrow/`](./golden-arrow/).
 
-## 🛠️ Tech Stack  
-- **[Vue 3](https://vuejs.org/)** – frontend framework  
-- **[TailwindCSS](https://tailwindcss.com/)** – utility-first CSS framework  
-- **[GSAP](https://greensock.com/gsap/)** – animations  
-- **[Vue Router](https://router.vuejs.org/)** – client-side routing  
-- **[Pinia](https://pinia.vuejs.org/)** – state management
-- **[OGL](https://github.com/oframe/ogl)** – WebGL effects
+## What works
 
-## 🗺️ Project Roadmap
-For detailed development plans, timeline, and upcoming features, see our [**Project Roadmap**](./ROADMAP.md).
+- Home product grid (first 4 items)
+- Collection page with card reveal animations
+- Product gallery route (`/collection/:slug`)
+- Responsive nav and mobile drawer
+- Pinia product store loaded from `public/products.json`
+- Light Rays WebGL on collection
+- Cart **route** and add-to-cart **button** (UI only)
 
-**Current Phase**: Core E-commerce Implementation  
-**Next Milestone**: Shopping Cart & Checkout Process  
+## Tech
+
+Vue 3, Vite, TypeScript, Tailwind CSS, Pinia, Vue Router, GSAP, OGL
+
+## What needs to be done
+
+Ship these before putting a live URL on a resume.
+
+### Must have (demo)
+
+- [ ] Implement `src/stores/cart.ts` (add, remove, quantity, total, localStorage)
+- [ ] Build `src/pages/cart.vue` (list items, change qty, remove, subtotal)
+- [ ] Wire add-to-cart so the plus button actually adds a product
+- [ ] Add size select (S–XL) before add; gallery currently has no size
+- [ ] Replace gallery placeholder text `"color"` with a real color/size picker
+- [ ] Cart icon badge with item count
+- [ ] Write real copy on `src/pages/story.vue` (still placeholder)
+- [ ] Unique product photos (six names currently share two image sets; all $35)
+- [ ] Production build and host `dist` on the domain
+
+### Cleanup
+
+- [ ] Delete empty stubs: `src/components/navBar.vue`, `src/components/heroPage.vue`
+- [ ] Keep one `addToCart` component (duplicates in `assets/` and `components/`)
+- [ ] Fix `index.html` `lang="ts"` → `lang="en"`
+- [ ] Push remaining local commits
+
+### Not required for a portfolio demo
+
+Stripe/PayPal, user accounts, admin, search, Flask backend. This repo is frontend only.
+
+## Run
+
+```sh
+cd golden-arrow
+npm install
+npm run dev
+```
+
+```sh
+npm run build
+npm run preview
+```
 
 # AIM HIGHER
