@@ -57,6 +57,7 @@
         :category="product.category"
         :price="product?.price"
         :images="product?.images"
+        class="mb-10"
          />
 
 
@@ -71,7 +72,7 @@ import { useProductStore } from '@/stores/products';
 import { onMounted, computed, ref, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import color from '@/components/color.vue';
-import AddToCartBig from '@/components/AddToCartBig.vue';
+import AddToCartBig from '@/components/addToCart&buyNow.vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
