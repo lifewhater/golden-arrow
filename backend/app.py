@@ -1,60 +1,34 @@
-import os, json
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
+import os, stripe
+from flask import Flask, redirect, jsonify
 from flask_cors import CORS
-from sqlalchemy import String, Integer, ForeignKey
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from dotenv import load_dotenv
 
-class Base(DeclarativeBase):
-    pass
+load_dotenv()
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///golden-arrow.db"
+CORS(app)
+stripe.api_key = os.getenv('STRIPE_API')
 
-db = SQLAlchemy(app)
+@app.route('/create-checkout-session', methods=['POST'])
+def create_checkout_session():
+  session = stripe.checkout.Session.create(
+    mode="payment",
+    ui_mode="hosted_page",
+    success_url="{{SUCCESS_URL}}",
+    cancel_url="{{CANCEL_URL}}",
+    line_items=[{"price": "{{PRICE_ID}}", "quantity": 1}],
+    billing_address_collection="auto",
+    phone_number_collection={"enabled": True},
+    allow_promotion_codes=False,
+    submit_type="auto",
+    integration_identifier="hosted_web_0001",
+    saved_payment_method_options={"payment_method_save": "enabled"},
+    origin_context="web",
+  )
+  return redirect(session.url, code=303)
 
-class ProductImages(db.Model):
-    __tablename__ = "product_images"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-    # Need to add Images here. ---WILL DO LATER---
-
-class Product(db.Model):
-    __tablename__ = "products"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-    slug: Mapped[str] = mapped_column(String, unique=True, index=True)
-    name: Mapped[str] = mapped_column(String)
-    category:Mapped[str] = mapped_column(String)
-    price_cents: Mapped[int] = mapped_column(Integer)
-
-    # Need to add Images here. ---WILL DO LATER---
-
-    #Returns slug, name, category, price as objects
-    def to_dict(self):
-        return{
-            "slug": self.slug,
-            "name" : self.name,
-            "category": self.category,
-            "price": self.price_cents / 100,
-            # IMAGES HERE 
-            #"images": [img.url for img in self.images],
-        }
-    
-
-@app.route("/checkout", methods=["POST"])
-def home():
-    return jsonify({"message": "Checkout endpoint reached"}), 200
-
-# Routes to "/products" Returns JSON
-@app.route("/products", methods=["GET"])
-def products():
-    items = db.session.query(Product).all()
-    return jsonify([p.to_dict() for p in items])
-
-
-with app.app_context():
-    db.create_all()
-
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/prices', methods=['GET'])
+def prices():
+  prices_all = stripe.Price.list(limit=10)
+  return jsonify(prices_all.to_dict())
+  

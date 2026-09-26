@@ -16,7 +16,8 @@ export default defineConfig({
     
   ],
   server: {
-    host: '0.0.0.0'
+    host:'0.0.0.0',
+    proxy: { '/create-checkout-session': 'http://localhost:5000' }
   },
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)),},
