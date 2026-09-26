@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-10 flex flex-row gap-(--ga-card-gap) text-(length:--ga-labels) ">
+    <div class="w-full h-10 flex flex-row gap-(--ga-card-gap) text-(length:--ga-labels)"  @click="addToCart()">
 
         <div class="flex place-items-center justify-center bg-(--ga-silver) h-full w-1/2 rounded-(--ga-card-r)
         transition duration-300 ease-in-out border border-(--ga-frost-border) text-(--ga-ink) 
@@ -10,13 +10,12 @@
         <div class="flex place-items-center justify-center bg-(--ga-frost-bg) h-full w-1/2 rounded-(--ga-card-r)
         transition duration-300 ease-in-out border border-(--ga-frost-border) text-(--ga-silver)
         hover:bg-neutral-800 cursor-pointer">
-            <span class="leading-none" @click="addToCart()"> Add to Cart </span>
+            <span class="leading-none"> Add to Cart </span>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cart';
 
 interface Props {
@@ -26,16 +25,14 @@ interface Props {
     category: string,
     images: string[],
     quantity?: number,
-    disabled?: boolean,
+
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    qty: 1,
-    disabled: false,
+    quantity: 1,
 })
 
 const cart = useCartStore();
-const router = useRouter();
 const priceInCents = Math.round(props.price * 100 )
 
 function addToCart() {
@@ -45,7 +42,7 @@ function addToCart() {
         price: priceInCents, 
         category: props.category, 
         images: props.images 
-    },  1 )
+    },  props.quantity )
 }
 
 </script>

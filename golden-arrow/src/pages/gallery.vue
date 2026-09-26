@@ -58,7 +58,7 @@
         :price="product?.price"
         :images="product?.images"
          />
-        
+
 
       </div>
     </div>

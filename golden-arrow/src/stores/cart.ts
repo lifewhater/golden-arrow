@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import piniaPersistedState from 'pinia-plugin-persistedstate'
 
 interface CartItem {
     slug: string
@@ -10,6 +11,7 @@ interface CartItem {
 }
 
 export const useCartStore = defineStore('cart', {
+
     state: () => {
         return {
             items: [] as CartItem[],
@@ -33,5 +35,6 @@ export const useCartStore = defineStore('cart', {
         clead() {
             this.items = []
         }
-    }
+    },
+    persist: true
 })

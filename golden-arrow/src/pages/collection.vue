@@ -39,7 +39,6 @@
                     <div class="flex flex-row text-(length:--ga-label-fontSize) 
                     text-(--ga-silver) pt-(--ga-padding-top) justify-between">
                         {{ product.name }}
-                        <AddToCartSmall :product="product" class="cursor-pointer" />
                         
                     </div>
                     <div class="flex flex-row 
@@ -61,7 +60,6 @@ import { useProductStore } from '@/stores/products';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LightRays from '@/assets/styles/LightRays.vue';
 import gsap from 'gsap';
-import AddToCartSmall from '@/components/AddToCartSmall.vue';
 
 gsap.registerPlugin(ScrollTrigger)
 const store = useProductStore()
