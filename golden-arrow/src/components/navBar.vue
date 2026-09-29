@@ -1,6 +1,6 @@
 <template>
 
-    <nav class="navbar mt-(--ga-margin-navBar)">
+    <nav class="navbar mt-(--ga-space-md)">
  
         <!-- Header logo or title -->
         <RouterLink class="header leading-none" to="/">GA</RouterLink>
@@ -17,17 +17,17 @@
                         gap-5
                         md:ml-1.5  
                         items-center 
-                        ml-(--ga-margin-leftSm)                    
+                        ml-(--ga-gutter)                    
                         lg:flex 
                         lg:gap-10
-                        lg:ml-(--ga-margin-left)">
+                        lg:ml-(--ga-gutter-lg)">
                         
             <li class=""><RouterLink to="/">Home</RouterLink></li>
             <li class=""><RouterLink to="/collection">Collection</RouterLink></li>
             <li class=""><RouterLink to="/story">Our Story</RouterLink></li>
         </ul>
-            <RouterLink to="/cart" class="ml-auto mr-(--ga-margin-leftSm)
-                                        md:mr-(--ga-margin-left)">
+            <RouterLink to="/cart" class="ml-auto mr-(--ga-gutter)
+                                        md:mr-(--ga-gutter-lg)">
                     <svg class="w-8 h-8 
                         text-gray-800 
                         dark:text-white" 
@@ -58,7 +58,7 @@ import drawer from '../pages/drawer.vue';
     cursor: pointer;
 }
 .header {  
-    font-size: var(--ga-header-fontSize);
+    font-size: var(--ga-text-logo);
     color: var(--ga-gold);
     text-align: center;
     font-family: 'Golden Arrow';
@@ -72,7 +72,7 @@ import drawer from '../pages/drawer.vue';
 /* Styles for the navigation menu */
 .menu {
     color: var(--ga-silver);
-    font-size: var(--ga-navbar-fontSize);
+    font-size: var(--ga-text-body);
     position: fixed;
     font-family: 'Labels';
 }

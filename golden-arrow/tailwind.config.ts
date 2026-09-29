@@ -52,7 +52,7 @@ export default {
       },
       spacing: {
         header: 'var(--ga-header-h)',      // pt-header, mt-header
-        cardGap: 'var(--ga-card-gap)',     // gap-y-cardGap, space-y-cardGap
+        cardGap: 'var(--ga-space-sm)',     // gap-y-cardGap, space-y-cardGap
       },
       boxShadow: {
         card: 'var(--ga-shadow-card)',     // shadow-card

@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-10 flex flex-row gap-(--ga-card-gap) text-(length:--ga-labels)"  @click="addToCart()">
+    <div class="w-full h-10 flex flex-row gap-(--ga-space-sm) text-(length:--ga-text-label)"  @click="addToCart()">
 
         <div class="flex place-items-center justify-center bg-(--ga-silver) h-full w-1/2 rounded-(--ga-card-r)
         transition duration-300 ease-in-out border border-(--ga-frost-border) text-(--ga-ink) 

@@ -15,7 +15,7 @@
                 tabindex="-1">
 
             <ul ref="text" class="menu
-                pl-(--ga-margin-leftSm)
+                pl-(--ga-gutter)
                 mt-40
                 gap-6
                 text-left">
@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
     z-index: 50;
     height: 15px;
     width: 30px;
-    margin-left: var(--ga-margin-leftSm);
+    margin-left: var(--ga-gutter);
 }
 
 /* Styles for each line in the hamburger menu */
@@ -137,7 +137,7 @@ onBeforeUnmount(() => {
     display: flex;
     flex-direction: column;
     color: var(--ga-silver);
-    font-size: var(--ga-navbar-fontSize);
+    font-size: var(--ga-text-body);
     font-family: 'Labels';
 }
 </style>

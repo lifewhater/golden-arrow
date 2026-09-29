@@ -10,22 +10,22 @@
         </div> -->
         <!-- Main label -->
         <h1 class="text-(--ga-silver)
-                mt-(--ga-margin-title)
-                text-(length:--ga-title-fontSm)
-                mx-(--ga-margin-leftSm)
-                md:text-(length:--ga-title-fontSize)
-                md:mx-(--ga-margin-left) z-1">
+                mt-(--ga-hero-top)
+                text-(length:--ga-text-title)
+                mx-(--ga-gutter)
+                md:text-(length:--ga-text-hero)
+                md:mx-(--ga-gutter-lg) z-1">
             Product</h1>
 
         <!-- Layout of the grid -->
         <div class="grid grid-cols-1
                     sm:grid-cols-2
                     lg:grid-cols-3
-                    mx-(--ga-margin-leftSm)
-                    mt-(--ga-margin-Card)
-                    gap-(--ga-card-gap)
-                    md:mx-(--ga-margin-left)
-                    space-y-(--ga-card-gap)">
+                    mx-(--ga-gutter)
+                    mt-(--ga-space-lg)
+                    gap-(--ga-space-sm)
+                    md:mx-(--ga-gutter-lg)
+                    space-y-(--ga-space-sm)">
 
             <div v-show="store.isLoaded" v-for="product in store.list" :key="product.slug"
                 class="group reveal-card flex flex-col w-full">
@@ -36,13 +36,13 @@
                     </RouterLink>
                 </div>
                 <div class="flex flex-col justify-start">
-                    <div class="flex flex-row text-(length:--ga-label-fontSize) 
-                    text-(--ga-silver) pt-(--ga-padding-top) justify-between">
+                    <div class="flex flex-row text-(length:--ga-text-subtitle) 
+                    text-(--ga-silver) pt-(--ga-space-md) justify-between">
                         {{ product.name }}
                         
                     </div>
                     <div class="flex flex-row 
-                    justify-between text-(length:--ga-price-size) text-(--ga-ink-weak)">
+                    justify-between text-(length:--ga-text-body) text-(--ga-ink-weak)">
                         ${{ product.price / 100}}
                     </div>
                 </div>

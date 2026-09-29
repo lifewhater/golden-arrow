@@ -11,7 +11,7 @@
 
     <!-- MOBILE VIEW -->
     <div class="md:hidden  w-full flex flex-row
-          h-(--ga-card-height) mt-30
+          h-(--ga-card-h) mt-30
           overflow-x-auto snap-x snap-mandatory scroll-smooth">
       <div v-for="(img, i) in product?.images" :key="i" class="shrink-0 w-screen snap-start">
         <img ref="mobile" :src="img" :alt="product?.name" class="object-cover aspect-5/6 h-full w-full"
@@ -20,16 +20,16 @@
     </div>
 
     <!-- LAYOUT -->
-    <div class="md:fixed md:ml-(--ga-margin-left) md:w-1/2 
+    <div class="md:fixed md:ml-(--ga-gutter-lg) md:w-1/2 
     h-auto w-full top-0 right-0 font">
 
       <!-- PRODUCT CARDS LAYOUT-->
-      <div class="flex flex-col gap-(--ga-margin-Card) mx-(--ga-margin-leftSm)
-        mt-(--ga-label-top)
-        md:mx-(--ga-margin-left) md:mt-(--ga-label-margin)">
+      <div class="flex flex-col gap-(--ga-space-lg) mx-(--ga-gutter)
+        mt-(--ga-space-md)
+        md:mx-(--ga-gutter-lg) md:mt-(--ga-space-xl)">
 
         <!-- NAME AND PRICE -->
-        <div class="flex flex-row place-content-between text-(length:--ga-gallery-name) text-white">
+        <div class="flex flex-row place-content-between text-(length:--ga-text-title) text-white">
           <p class="">
             {{ product?.name }}
           </p>
@@ -45,7 +45,7 @@
           <div class="h-5 border border-b-(--ga-silver)/25
           border-l-(--ga-silver)/25 border-r-(--ga-silver)/25 mb-10" />
           <!-- COLOR CHOOSING -->
-          <p class="text-(length:--ga-labels) text-white uppercase">Color</p>
+          <p class="text-(length:--ga-text-label) text-white uppercase">Color</p>
           <color class="" />
         </div>
 
