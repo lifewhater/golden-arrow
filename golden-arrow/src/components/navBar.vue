@@ -1,6 +1,6 @@
 <template>
-
-    <nav class="navbar mt-(--ga-space-md)">
+    <nav class="navbar pt-(--ga-space-md)">
+        <!-- NEED TO FIX THE GA CONTAINMENT AND THE BLUR GRADIENT  -->
  
         <!-- Header logo or title -->
         <RouterLink class="header leading-none" to="/">GA</RouterLink>
