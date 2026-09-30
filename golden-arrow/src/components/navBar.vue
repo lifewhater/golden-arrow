@@ -56,6 +56,21 @@ import drawer from '../pages/drawer.vue';
     align-items: center;
     z-index: 50;
     cursor: pointer;
+    isolation: isolate;
+}
+
+/* Extend the blur below the bar, then fade it out instead of ending it abruptly. */
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 8rem;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 35%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 35%, transparent 100%);
 }
 .header {  
     font-size: var(--ga-text-logo);
