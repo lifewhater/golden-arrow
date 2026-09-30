@@ -5,15 +5,15 @@
         <h1 class="text-(--ga-silver)
                 mt-(--ga-hero-top)
                 text-(length:--ga-text-title)
-                
                 mx-(--ga-gutter)
                 md:text-(length:--ga-text-hero)
                 md:mx-(--ga-gutter-lg) z-1">Cart</h1>
 
-        <div class="flex flex-row flex-wrap justify-center lg:gap-(--ga-space-xl) md:gap-(--ga-space-sm)">
+        <div class="flex flex-row  flex-wrap justify-center lg:gap-(--ga-space-sm) md:gap-(--ga-space-sm) md:flex-1 sm:gap-(--ga-space-sm)">
+
             <div v-for="item in cart.items" class="grid grid-flow-col grid-rows-3 content-center
-                text-(length:--ga-text-body) m-(--ga-space-md) rounded-(--ga-card-r) justify-start gap-(--ga-space-md)
-                 outline outline-(--ga-frost-border) bg-(--ga-frost-bg) p-(--ga-space-sm)">
+                text-(length:--ga-text-body) lg:m-(--ga-space-sm) rounded-(--ga-card-r) justify-start gap-(--ga-space-md)
+                 outline outline-(--ga-frost-border) bg-(--ga-frost-bg) p-(--ga-space-sm) md:h-(--ga-space-s) md:m-(--ga-card-r) sm:-(--ga-card-r)">
 
                 <div class="w-(--ga-space-xl) shrink-0 row-span-3">
                     <img :src="item.images[0]" :alt="item.name"
