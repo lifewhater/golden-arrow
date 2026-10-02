@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for Golden Arrow Project",
+  "keywords": [
+    "nodejs",
+    "vuejs",
+    "api"
+  ],
+  "homepage": "https://github.com/lifewhater/golden-arrow#readme",
+  "bugs": {
+    "url": "https://github.com/lifewhater/golden-arrow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifewhater/golden-arrow.git"
+  },
+  "author": "Prabhjot Singh",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
