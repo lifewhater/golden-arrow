@@ -93,30 +93,6 @@ Building on the recent gallery view improvements:
 
 ---
 
-## 📅 Weekly Development Schedule
-
-### Week 1 (Sept 9-15, 2024) - Cart Implementation
-- **Mon-Tue**: Implement cart store functionality
-- **Wed-Thu**: Build cart UI components
-- **Fri**: Integration testing and bug fixes
-
-### Week 2 (Sept 16-22, 2024) - Product Enhancements  
-- **Mon-Tue**: Add product variants (size/color)
-- **Wed-Thu**: Update gallery page with variant selection
-- **Fri**: Update product data and testing
-
-### Week 3 (Sept 23-29, 2024) - Content & Polish
-- **Mon-Tue**: Complete story page content
-- **Wed-Thu**: Add missing copy and imagery
-- **Fri**: UI polish and responsive testing
-
-### Week 4 (Sept 30-Oct 6, 2024) - Checkout Foundation
-- **Mon-Tue**: Design checkout flow
-- **Wed-Thu**: Implement order form
-- **Fri**: Add order confirmation
-
----
-
 ## 🐛 Known Issues & Technical Debt
 
 ### Immediate Fixes Needed

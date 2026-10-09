@@ -1,4 +1,5 @@
-import os, stripe
+import os
+import stripe  # type: ignore[import-not-found]
 from flask import Flask, redirect, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv

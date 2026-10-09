@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const cart = useCartStore();
-const priceInCents = Math.round(props.price * 100 )
+const priceInCents = Math.round(props.price)
 
 function addToCart() {
     cart.add({ 

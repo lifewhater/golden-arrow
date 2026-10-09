@@ -20,7 +20,7 @@
                         class="block h-auto w-full rounded-(--ga-card-r) object-contain" />
                 </div>
                 <div class="min-w-0 wrap-break-words text-(length:--ga-text-subtitle) text-(--ga-gold) lg:col-span-2">{{ item.name }}</div>
-                <div class="-mt-(--ga-space-md) lg:col-span-2">${{ item.price / 10000 }}</div>
+                <div class="-mt-(--ga-space-md) lg:col-span-2">${{ item.price / 100}}</div>
                 <div class="text-(length:--ga-text-label) lg:col-span-2 lg:-mt-(--ga-space-sm) -mt-(--ga-space-md)">{{ item.quantity }}</div>
                 <button class="justify-self-start text-lg text-(--ga-ink-weak) lg:ml-30" @click="cart.remove(item.slug)">Remove</button>
 

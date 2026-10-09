@@ -26,7 +26,6 @@ Ship these before putting a live URL on a resume.
 ### Must have (demo)
 
 - [ ] Build `src/pages/cart.vue` (list items, change qty, remove, subtotal)
-- [ ] Wire `AddToCartSmall.vue` — it imports the cart store but never calls `add`
 - [ ] Wire **Buy Now** (currently no click handler)
 - [ ] Cart icon badge using `cart.count`
 - [ ] Size select (S–XL) before add; gallery has no size
